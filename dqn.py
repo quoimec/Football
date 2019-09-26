@@ -123,8 +123,8 @@ class Agent:
         
         self.memory = deque(maxlen = 50000)
         
-        self.model = self.build(inputs = (inputs,), outputs = outputs, weights = weights)
-        self.target = self.build(inputs = (inputs,), outputs = outputs, weights = weights)
+        self.model = self.build(inputs = (self.inputs,), outputs = self.outputs, weights = weights)
+        self.target = self.build(inputs = (self.inputs,), outputs = self.outputs, weights = weights)
         
         self.updates = 0
         
@@ -213,12 +213,12 @@ class Agent:
                 
                 for episode in range(1, episodes + 1):
                     
+                    done = False
+                    results["training"].append(0)
+                    state = np.reshape(self.training.reset(), [1, self.inputs])
+                    
                     lines[0] = "Epoch {} of {} - {}% [{}{}]".format(epoch, epochs, int(episode / episodes * 100), "#" * int(episode / (episodes / 10)), " " * (10 - int(episode / (episodes / 10))))
                     lines[1] = "Average Training Reward: {:.4f} - Epsilon: {:.4f} - Seconds: {}".format(np.mean(results["training"]), self.params.epsilon, (datetime.datetime.now() - start).seconds)
-                    
-                    done = False
-                    state = np.reshape(self.training.reset(), [1, self.inputs])
-                    results["training"][episode - 1] = 0
                 
                     while not done:
                         
@@ -241,12 +241,11 @@ class Agent:
     
                 for test in range(1, tests + 1):
                     
-                    lines[3] = "Test {} of {} - {}% [{}{}]".format(test, tests, int(test / tests * 100), "#" * int(test / (tests / 10)), " " * (10 - int(test / (tests / 10))))
-                    
                     done = False
-                    actions = []
+                    results["testing"].append(0)
                     state = np.reshape(self.testing.reset(), [1, self.inputs])
-                    results["testing"][test - 1] = 0
+                    
+                    lines[3] = "Test {} of {} - {}% [{}{}]".format(test, tests, int(test / tests * 100), "#" * int(test / (tests / 10)), " " * (10 - int(test / (tests / 10))))
                     
                     while not done:
                         
