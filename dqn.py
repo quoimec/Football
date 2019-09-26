@@ -276,7 +276,51 @@ class Agent:
         
         self.model.save_weights(path)
 
-""" Experiment 2: Football DQN V2
+
+
+agent = Agent(
+    version = "v4",
+    env = {"env_name": "academy_run_to_score_with_keeper", "representation": "simple115", "render": False, "rewards": "scoring"},
+    params = Parameters(epsilon = 0.5, rate = 0.99999), 
+    weights = "models/football-dqn-v/football-dqnv3-e18.hdf5",
+    allowed = ["action_short_pass", "action_shot", "action_left", "action_top_left", "action_top", "action_top_right", "action_right", "action_bottom_right", "action_bottom", "action_bottom_left", "action_dribble", "action_release_dribble"]
+)
+
+agent.run(epochs = 50, episodes = 50, tests = 10)
+
+
+
+
+
+""" 
+
+######################################
+#####     EXPERIMENT RECORDS     #####
+######################################
+
+
+    Experiment 3: Football DQN V3
+
+    Academy Run To Score With Keeper, added dribble to action set and added checkpoints to reward profile
+    Increased decay rate and halfed epsilon starting value to decrease occurence of random actions but increase period of effect
+    Stoped after ~50 epochs due to overfitting. Will remove checkpoints reward and try again. 
+
+    agent = Agent(
+        version = "v3",
+        env = {"env_name": "academy_run_to_score_with_keeper", "representation": "simple115", "render": False, "rewards": "scoring,checkpoints"},
+        params = Parameters(epsilon = 0.5, rate = 0.999995), 
+        weights = "models/football-dqn-v2/football-dqnv2-e16.hdf5",
+        allowed = ["action_short_pass", "action_shot", "action_left", "action_top_left", "action_top", "action_top_right", "action_right", "action_bottom_right", "action_bottom", "action_bottom_left", "action_dribble", "action_release_dribble"]
+    )
+
+    agent.run(epochs = 100, episodes = 50, tests = 10)
+    
+
+    -------------------------
+
+
+    Experiment 2: Football DQN V2
+    
     Academy Empty Goal Close, restricted actions to pass/shoot and movement
     Final training accuracy: 0.9400, Final test accuracy: 1.0
 
@@ -291,17 +335,8 @@ class Agent:
 
     agent.run(environment = environment, epochs = 1000, episodes = 50, tests = 5, version = "v2")
 
+
 """
-
-agent = Agent(
-    version = "v3",
-    env = {"env_name": "academy_run_to_score_with_keeper", "representation": "simple115", "render": False, "rewards": "scoring,checkpoints"},
-    params = Parameters(epsilon = 0.5, rate = 0.999995), 
-    weights = "models/football-dqn-v2/football-dqnv2-e16.hdf5",
-    allowed = ["action_short_pass", "action_shot", "action_left", "action_top_left", "action_top", "action_top_right", "action_right", "action_bottom_right", "action_bottom", "action_bottom_left", "action_dribble", "action_release_dribble"]
-)
-
-agent.run(epochs = 100, episodes = 50, tests = 10)
 
 
 
