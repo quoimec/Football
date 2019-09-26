@@ -258,14 +258,14 @@ class Agent:
                     
                 final = np.mean(results["testing"])
                 
-                if final >= best["score"] and result > 0.0:
+                if final >= best["score"] and final > 0.0:
                     
                     lines[4] = "New Best Score: {}".format(final)
                     best = {"score": final, "model": self.name.format(epoch)}
 
                     self.save(os.path.join(self.path, self.name.format(epoch) + ".hdf5"))
                     
-                with open(os.path.join(self.path, "results.txt")) as dump:
+                with open(os.path.join(self.path, "results.txt"), "a+") as dump:
                     for line in lines: dump.write(line + ("\r\n" if line != "\r\n" else ""))
 
     def load(self, path):
