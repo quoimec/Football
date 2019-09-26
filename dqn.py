@@ -34,10 +34,58 @@ class Parameters():
 
 class Agent:
     
-    def __init__(self, inputs, outputs, params, verbose = False, allowed = None, weights = None):
+    def __init__(self, version, env, params, verbose = False, allowed = None, weights = None):
         
-        self.inputs = inputs
-        self.outputs = outputs
+        self.version = version
+        self.name = "football-dqn{}".format(version) + "-e{}"
+        self.path = "models/football-dqn-{}/".format(version)
+        
+        self.defaults = {
+            "env_name": "",
+            "representation": "simple115",
+            "rewards": "scoring",
+            "render": False,
+            "write_video": False,
+            "dump_frequency": 1,
+            "extra_players": None,
+            "number_of_left_players_agent_controls": 1,
+            "number_of_right_players_agent_controls": 0,
+            "enable_sides_swap": False
+        }
+        
+        config = dict(map(lambda a: (a[0], a[1] if a[0] not in env.keys() else env[a[0]]), self.defaults.items()))
+        
+        self.training = football.create_environment(
+            env_name = config["env_name"],
+            representation = config["representation"],
+            rewards = config["rewards"],
+            render = config["render"],
+            write_video = config["write_video"],
+            dump_frequency = config["dump_frequency"],
+            extra_players = config["extra_players"],
+            number_of_left_players_agent_controls = config["number_of_left_players_agent_controls"],
+            number_of_right_players_agent_controls = config["number_of_right_players_agent_controls"],
+            enable_sides_swap = config["enable_sides_swap"]
+        )
+        
+        self.testing = football.create_environment(
+            env_name = config["env_name"],
+            representation = config["representation"],
+            rewards = config["rewards"],
+            enable_full_episode_videos = True,
+            render = config["render"],
+            write_video = config["write_video"],
+            dump_frequency = config["dump_frequency"],
+            logdir = self.path,
+            extra_players = config["extra_players"],
+            number_of_left_players_agent_controls = config["number_of_left_players_agent_controls"],
+            number_of_right_players_agent_controls = config["number_of_right_players_agent_controls"],
+            enable_sides_swap = config["enable_sides_swap"]
+        )
+        
+        self.inputs = self.training.observation_space.shape[0]
+        self.outputs = self.training.action_space.n
+        
         self.params = params
         self.verbose = verbose
         
@@ -137,18 +185,15 @@ class Agent:
             self.target.set_weights(self.model.get_weights())
             self.updates = 0
                 
-    def run(self, *, environment, epochs, episodes, tests, version):
+    def run(self, *, epochs, episodes, tests):
         
-        name = "football-dqn{}".format(version) + "-e{}"
-        path = "models/football-dqn-{}/".format(version)
-        
-        if os.path.exists(path):
-            
-            if len(os.listdir(path)) > 0:
-                print("Directory: {} is not empty. Please make sure you are not overwriting existing models and try again.".format(path))
+        if os.path.exists(self.path):
+    
+            if len(os.listdir(self.path)) > 0:
+                print("Directory: {} is not empty. Please make sure you are not overwriting existing models and try again.".format(self.path))
                 return
         else:
-            os.mkdir(path)
+            os.mkdir(self.path)
         
         if not self.verbose:
             self.model.fit(np.reshape([0.0] * self.inputs, [1, self.inputs]), np.reshape([0] * self.outputs, [1, self.outputs]), epochs = 1, verbose = self.verbose)
@@ -159,32 +204,34 @@ class Agent:
             
             with output(initial_len = 6, interval = 0) as lines:
                 
-                lines[2] = "\n"
-                lines[5] = "\n"
+                lines[2] = "\r\n"
+                lines[5] = "\r\n"
                 
-                training = 0
-                testing = {"scores": [], "actions": []}
+                results = {"training": [], "testing": []}
                 
                 start = datetime.datetime.now()
                 
                 for episode in range(1, episodes + 1):
                     
                     lines[0] = "Epoch {} of {} - {}% [{}{}]".format(epoch, epochs, int(episode / episodes * 100), "#" * int(episode / (episodes / 10)), " " * (10 - int(episode / (episodes / 10))))
-                    lines[1] = "Average Training Reward: {:.4f} - Epsilon: {:.4f} - Seconds: {}".format(training / episode, self.params.epsilon, (datetime.datetime.now() - start).seconds)
+                    lines[1] = "Average Training Reward: {:.4f} - Epsilon: {:.4f} - Seconds: {}".format(np.mean(results["training"]), self.params.epsilon, (datetime.datetime.now() - start).seconds)
                     
                     done = False
-                    state = np.reshape(environment.reset(), [1, self.inputs])
+                    state = np.reshape(self.training.reset(), [1, self.inputs])
+                    results["training"][episode - 1] = 0
                 
                     while not done:
                         
                         action = self.action(state)
-                        next, reward, done, info = environment.step(action)
+                        next, reward, done, info = self.training.step(action)
                         next = np.reshape(next, [1, self.inputs])
                         
                         self.record(state = state, action = action, reward = reward, next = next, done = done)
                         
-                        training += reward
+                        results["training"][episode - 1] += reward
                         state = next
+                        
+                        lines[1] = "Average Training Reward: {:.4f} - Epsilon: {:.4f} - Seconds: {}".format(np.mean(results["training"]), self.params.epsilon, (datetime.datetime.now() - start).seconds)
         
                     if len(self.memory) > 500:
                         self.train(100)
@@ -196,40 +243,31 @@ class Agent:
                     
                     lines[3] = "Test {} of {} - {}% [{}{}]".format(test, tests, int(test / tests * 100), "#" * int(test / (tests / 10)), " " * (10 - int(test / (tests / 10))))
                     
-                    total = 0
                     done = False
                     actions = []
-                    state = np.reshape(environment.reset(), [1, self.inputs])
+                    state = np.reshape(self.testing.reset(), [1, self.inputs])
+                    results["testing"][test - 1] = 0
                     
                     while not done:
                         
                         action = self.action(state, explore = False)
-                        next, reward, done, info = environment.step(action)
-                        state = np.reshape(next, [1, self.inputs])
-                        total += reward
-                        actions.append(action)
+                        next, reward, done, info = self.testing.step(action)
                         
-                    testing["scores"].append(total)
-                    testing["actions"].append(actions)
+                        results["testing"][test - 1] += reward
+                        
+                        lines[4] = "Testing Average: {:.2f} - Best Score: {} - {:.2f} - Seconds: {}".format(np.mean(results["testing"]), best["model"], best["score"], (datetime.datetime.now() - start).seconds)
                     
-                    lines[4] = "Testing Average: {:.2f} - Best Score: {} - {:.2f} - Seconds: {}".format(np.mean(testing["scores"]), best["model"], best["score"], (datetime.datetime.now() - start).seconds)
-                    
-                result = np.mean(testing["scores"])
+                final = np.mean(results["testing"])
                 
-                if result >= best["score"] and result > 0.0:
+                if final >= best["score"] and result > 0.0:
                     
-                    lines[4] = "New Best Score: {}".format(result)
-                    best = {"score": result, "model": name.format(epoch)}
-                
-                    modelPath = os.path.join(path, name.format(epoch) + ".hdf5")
-                    picklePath = os.path.join(path, name.format(epoch) + ".pickle")
+                    lines[4] = "New Best Score: {}".format(final)
+                    best = {"score": final, "model": self.name.format(epoch)}
 
-                    with open(picklePath, "wb") as jar:
-                        pickle.dump(testing, jar)
+                    self.save(os.path.join(self.path, self.name.format(epoch) + ".hdf5"))
                     
-                    self.save(modelPath)
-                    
-                    environment.reset()
+                with open(os.path.join(self.path, "results.txt")) as dump:
+                    for line in lines: dump.write(line + ("\r\n" if line != "\r\n" else ""))
 
     def load(self, path):
         
@@ -256,22 +294,15 @@ class Agent:
 
 """
 
-environment = football.create_environment(
-    env_name = "academy_run_to_score_with_keeper",
-    representation = "simple115",
-    render = False,
-    rewards = "scoring,checkpoints"
-)
-
 agent = Agent(
-    inputs = environment.observation_space.shape[0], 
-    outputs = environment.action_space.n, 
-    params = Parameters(epsilon = 0.5, rate = 0.999999), 
+    version = "v3",
+    env = {"env_name": "academy_run_to_score_with_keeper", "representation": "simple115", "render": False, "rewards": "scoring,checkpoints"},
+    params = Parameters(epsilon = 0.5, rate = 0.999995), 
     weights = "models/football-dqn-v2/football-dqnv2-e16.hdf5",
     allowed = ["action_short_pass", "action_shot", "action_left", "action_top_left", "action_top", "action_top_right", "action_right", "action_bottom_right", "action_bottom", "action_bottom_left", "action_dribble", "action_release_dribble"]
 )
 
-agent.run(environment = environment, epochs = 100, episodes = 50, tests = 10, version = "v3")
+agent.run(epochs = 100, episodes = 50, tests = 10)
 
 
 
