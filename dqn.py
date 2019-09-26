@@ -258,13 +258,15 @@ class Agent:
                     
                 final = np.mean(results["testing"])
                 
+                if final >= 0.5:
+                
+                    self.save(os.path.join(self.path, self.name.format(epoch) + ".hdf5"))
+                
                 if final >= best["score"] and final > 0.0:
                     
                     lines[4] = "New Best Score: {}".format(final)
                     best = {"score": final, "model": self.name.format(epoch)}
 
-                    self.save(os.path.join(self.path, self.name.format(epoch) + ".hdf5"))
-                    
                 with open(os.path.join(self.path, "results.txt"), "a+") as dump:
                     for line in lines: dump.write(line + ("\r\n" if line != "\r\n" else ""))
 
@@ -278,10 +280,12 @@ class Agent:
 
 
 
+
+
 agent = Agent(
-    version = "v4",
-    env = {"env_name": "academy_run_to_score_with_keeper", "representation": "simple115", "render": False, "rewards": "scoring"},
-    params = Parameters(epsilon = 0.5, rate = 0.99999), 
+    version = "v5",
+    env = {"env_name": "academy_run_to_keeper", "representation": "simple115", "render": False, "rewards": "scoring"},
+    params = Parameters(epsilon = 0.5, rate = 0.999991), 
     weights = "models/football-dqn-v3/football-dqnv3-e18.hdf5",
     allowed = ["action_short_pass", "action_shot", "action_left", "action_top_left", "action_top", "action_top_right", "action_right", "action_bottom_right", "action_bottom", "action_bottom_left", "action_dribble", "action_release_dribble"]
 )
@@ -290,13 +294,29 @@ agent.run(epochs = 50, episodes = 50, tests = 10)
 
 
 
-
-
 """ 
 
 ######################################
 #####     EXPERIMENT RECORDS     #####
 ######################################
+
+    Experiment 4: Football DQN V4
+    
+    Academy Run To Score without keeper
+
+    agent = Agent(
+        version = "v4",
+        env = {"env_name": "academy_run_to_score", "representation": "simple115", "render": False, "rewards": "scoring"},
+        params = Parameters(epsilon = 0.5, rate = 0.99999), 
+        weights = "models/football-dqn-v3/football-dqnv3-e18.hdf5",
+        allowed = ["action_short_pass", "action_shot", "action_left", "action_top_left", "action_top", "action_top_right", "action_right", "action_bottom_right", "action_bottom", "action_bottom_left", "action_dribble", "action_release_dribble"]
+    )
+
+    agent.run(epochs = 50, episodes = 50, tests = 10)
+        
+
+    -------------------------
+
 
 
     Experiment 3: Football DQN V3
