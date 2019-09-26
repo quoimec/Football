@@ -282,7 +282,7 @@ agent = Agent(
     version = "v4",
     env = {"env_name": "academy_run_to_score_with_keeper", "representation": "simple115", "render": False, "rewards": "scoring"},
     params = Parameters(epsilon = 0.5, rate = 0.99999), 
-    weights = "models/football-dqn-v/football-dqnv3-e18.hdf5",
+    weights = "models/football-dqn-v3/football-dqnv3-e18.hdf5",
     allowed = ["action_short_pass", "action_shot", "action_left", "action_top_left", "action_top", "action_top_right", "action_right", "action_bottom_right", "action_bottom", "action_bottom_left", "action_dribble", "action_release_dribble"]
 )
 
