@@ -1,0 +1,81 @@
+
+Epoch 1 of 1000 - 100% [##########]
+Average Training Reward: 0.3600 - Epsilon: 0.7118 - Seconds: 122
+Test 5 of 5 - 100% [##########]
+Testing Average: 0.00 - Best Score: None - 0.00 - Seconds: 1       
+
+Epoch 2 of 1000 - 100% [##########]
+Average Training Reward: 0.3200 - Epsilon: 0.4317 - Seconds: 172
+Test 5 of 5 - 100% [##########]
+Testing Average: 0.00 - Best Score: None - 0.00 - Seconds: 2       
+
+Epoch 3 of 1000 - 100% [##########]
+Average Training Reward: 0.2600 - Epsilon: 0.2618 - Seconds: 173
+Test 5 of 5 - 100% [##########]
+New Best Score: 0.8          
+
+Epoch 4 of 1000 - 100% [##########]
+Average Training Reward: 0.3800 - Epsilon: 0.1588 - Seconds: 172
+Test 5 of 5 - 100% [##########]
+Testing Average: 0.00 - Best Score: football-dqnv2-e3 - 0.80 - Seconds: 1                
+
+Epoch 5 of 1000 - 100% [##########]
+Average Training Reward: 0.3600 - Epsilon: 0.0963 - Seconds: 173
+Test 5 of 5 - 100% [##########]
+Testing Average: 0.00 - Best Score: football-dqnv2-e3 - 0.80 - Seconds: 2                
+
+Epoch 6 of 1000 - 100% [##########]
+Average Training Reward: 0.6200 - Epsilon: 0.0584 - Seconds: 169
+Test 5 of 5 - 100% [##########]
+New Best Score: 1.0          
+
+Epoch 7 of 1000 - 100% [##########]
+Average Training Reward: 0.3200 - Epsilon: 0.0354 - Seconds: 174
+Test 5 of 5 - 100% [##########]
+Testing Average: 0.00 - Best Score: football-dqnv2-e6 - 1.00 - Seconds: 2                
+
+Epoch 8 of 1000 - 100% [##########]
+Average Training Reward: 0.5000 - Epsilon: 0.0215 - Seconds: 172
+Test 5 of 5 - 100% [##########]
+New Best Score: 1.0          
+
+Epoch 9 of 1000 - 100% [##########]
+Average Training Reward: 0.8800 - Epsilon: 0.0130 - Seconds: 167
+Test 5 of 5 - 100% [##########]
+Testing Average: 0.80 - Best Score: football-dqnv2-e8 - 1.00 - Seconds: 0                
+
+Epoch 10 of 1000 - 100% [##########]
+Average Training Reward: 0.7800 - Epsilon: 0.0100 - Seconds: 164
+Test 5 of 5 - 100% [##########]
+New Best Score: 1.0          
+
+Epoch 11 of 1000 - 100% [##########]
+Average Training Reward: 0.7800 - Epsilon: 0.0100 - Seconds: 164
+Test 5 of 5 - 100% [##########]
+New Best Score: 1.0          
+
+Epoch 12 of 1000 - 100% [##########]
+Average Training Reward: 0.7200 - Epsilon: 0.0100 - Seconds: 170
+Test 5 of 5 - 100% [##########]
+New Best Score: 1.0          
+
+Epoch 13 of 1000 - 100% [##########]
+Average Training Reward: 0.7000 - Epsilon: 0.0100 - Seconds: 169
+Test 5 of 5 - 100% [##########]
+Testing Average: 0.00 - Best Score: football-dqnv2-e12 - 1.00 - Seconds: 1               
+
+Epoch 14 of 1000 - 100% [##########]
+Average Training Reward: 0.7400 - Epsilon: 0.0100 - Seconds: 166
+Test 5 of 5 - 100% [##########]
+Testing Average: 0.00 - Best Score: football-dqnv2-e12 - 1.00 - Seconds: 1               
+
+Epoch 15 of 1000 - 100% [##########]
+Average Training Reward: 0.8000 - Epsilon: 0.0100 - Seconds: 163
+Test 5 of 5 - 100% [##########]
+New Best Score: 1.0          
+
+Epoch 16 of 1000 - 100% [##########]
+Average Training Reward: 0.9400 - Epsilon: 0.0100 - Seconds: 162
+Test 5 of 5 - 100% [##########]
+New Best Score: 1.0  
+        
