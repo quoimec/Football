@@ -18,14 +18,83 @@ from stable_baselines.common.policies import MlpPolicy, MlpLnLstmPolicy
 from stable_baselines.common.vec_env import SubprocVecEnv
 from stable_baselines import PPO2
 
+from functools import reduce
 from reprint import output
 
 
 rewards = []
 
+class Results:
+    
+    def __init__(self):
+    
+        self.won = 0
+        self.lost = 0
+        self.drawn = 0
+        self.points = 0
+        self.matches = 0
+        self.goalsfor = 0
+        self.goalsagainst = 0
+        self.goaldifference = 0
+        self.tempfor = 0
+        self.tempagainst = 0
+        self.tempdifference = 0
+    
+    def temps(self, matches):
+        
+        self.tempfor = reduce(lambda a, b: a + b[0]["score"][0], matches, 0)
+        self.tempagainst = reduce(lambda a, b: a + b[0]["score"][1], matches, 0)
+        self.tempdifference = self.tempfor - self.tempagainst
+        
+    def record(self, scored, conceded):
+        
+        self.tempfor = 0
+        self.tempagainst = 0
+        self.tempdifference = 0
+        
+        self.goalsfor += scored
+        self.goalsagainst += conceded
+        self.goaldifference = self.goalsfor - self.goalsagainst
+        
+        self.matches += 1
+        
+        if scored > conceded:
+            self.won += 1
+            self.points += 3
+        elif scored < conceded:
+            self.lost += 1
+        else:
+            self.drawn += 1
+            self.points += 1
+    
+    def results(self):
+        
+        return [
+            ("Played", self.matches),
+            ("Won", self.won),
+            ("Lost", self.lost),
+            ("Drawn", self.drawn),
+            ("Points", self.points)
+        ]
+
+    def goals(self):
+        
+        return [
+            ("Goals For", self.goalsfor + self.tempfor),
+            ("Goals Against", self.goalsagainst + self.tempagainst),
+            ("Goal Ratio", self.goaldifference + self.tempdifference)
+        ]
+        
+    def testing(self):
+        
+        return [
+            ("Points", self.points),
+            ("Goal Ratio", self.goaldifference + self.tempdifference)
+        ]
+
 class Agent:
     
-    def __init__(self, version, env, parallel = 1, verbose = False, allowed = None, weights = None):
+    def __init__(self, version, env, parallel = 1, verbose = False, weights = None):
         
         self.version = version
         self.name = "football-ppo{}".format(version) + "-e{}"
@@ -63,26 +132,24 @@ class Agent:
             ) for _ in range(parallel)
         
         ])
+        self.testing = SubprocVecEnv([
         
-
-        # # self.testing = sb.common.vec_env.SubprocVecEnv([
-        # 
-        #     football.create_environment(
-        #         env_name = config["env_name"],
-        #         representation = config["representation"],
-        #         rewards = config["rewards"],
-        #         enable_full_episode_videos = True,
-        #         render = config["render"],
-        #         write_video = config["write_video"],
-        #         dump_frequency = config["dump_frequency"],
-        #         logdir = self.path,
-        #         extra_players = config["extra_players"],
-        #         number_of_left_players_agent_controls = config["number_of_left_players_agent_controls"],
-        #         number_of_right_players_agent_controls = config["number_of_right_players_agent_controls"],
-        #         enable_sides_swap = config["enable_sides_swap"]
-        #     )
-        # 
-        # ])
+            lambda: football.create_environment(
+                env_name = "11_vs_11_easy_stochastic",
+                representation = "simple115",
+                rewards = config["rewards"],
+                render = False,
+                # write_video = True,
+                # dump_frequency = 1,
+                # enable_full_episode_videos = False,
+                # logdir = self.path,
+                extra_players = config["extra_players"],
+                number_of_left_players_agent_controls = config["number_of_left_players_agent_controls"],
+                number_of_right_players_agent_controls = config["number_of_right_players_agent_controls"],
+                enable_sides_swap = config["enable_sides_swap"]
+            ) for _ in range(1)
+        
+        ])
         
         self.inputs = self.training.get_attr("observation_space")[0].shape[0]
         self.outputs = self.training.get_attr("action_space")[0].n
@@ -93,198 +160,191 @@ class Agent:
             os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3" 
             deprecation._PRINT_DEPRECATION_WARNINGS = False
             logger = logging.getLogger()
-            logger.setLevel(logging.CRITICAL)
+            logger.setLevel(logging.ERROR)
         
-        self.actions = {
-            "action_idle": 0,
-            "action_left": 1,
-            "action_top_left": 2,
-            "action_top": 3,
-            "action_top_right": 4,
-            "action_right": 5,
-            "action_bottom_right": 6,
-            "action_bottom": 7,
-            "action_bottom_left": 8,
-            "action_long_pass": 9,
-            "action_high_pass": 10,
-            "action_short_pass": 11,
-            "action_shot": 12,
-            "action_sprint": 13,
-            "action_release_direction": 14,
-            "action_release_sprint": 15,
-            "action_keeper_rush": 16,
-            "action_release_keeper_rush": 17,
-            "action_sliding": 18,
-            "action_dribble": 19,
-            "action_release_dribble": 20
-        }
-        self.allowed = list(filter(lambda a: a in self.actions.keys(), allowed))
-        self.banned = list(map(lambda b: b[1], filter(lambda a: a[0] not in self.allowed, self.actions.items())))
-        
-        if weights != None:
-            self.model.load(weights)
-        
-        self.updates = 0
-        
+        if weights == None:
+            self.model = PPO2(policy = MlpPolicy, env = self.training, verbose = int(self.verbose))
+        else:
+            self.model = PPO2.load(weights)
     
-    def test(self):
+        self.experience = 0
+    
+    def duration(self, time):
         
-         model = PPO2.load("ppo2-football")
+        return "{:02}:{:02}".format(time // 60, time % 60)
+            
+    def progress(self, current, total):
+        
+        return "{}{}".format("#" * int(current / (total / 10)), " " * (10 - int(current / (total / 10))))
+    
+    def blank(self):
+        
+        return [("", "")]
+    
+    def separator(self, width = 36, inset = "   "):
+        
+        return [inset + ("-" * width)]
+    
+    def section(self, *, values, width = 36, inset = "   "):
+        
+        rows = []
+        reserved = 5
+        
+        space = lambda a: len(str(a[0])) + len(str(a[1]))
+        lengths = list(map(lambda a: space(a), values))
+        
+        width = max(lengths + [width - reserved])
+        
+        for (name, value), length in zip(values, lengths):
+            rows.append(inset + "| " + name + (" " * (width - length)) + " " + str(value) + " |")
+        
+        return rows
+    
+    def dump(self, lines):
+        
+        with open(os.path.join(self.path, "results.txt"), "a+") as dump:
+            for line in lines: dump.write(line + ("\r\n" if line != "\r\n" else ""))
          
-         # Enjoy trained agent
-         obs = self.training.reset()
-         while True:
-             action, _states = model.predict(obs)
-             obs, rewards, dones, info = self.training.step(action)
-             # self.training.render()
-         
+    def train(self, *, epoch, episodes):
+        
+        results = Results()
+        
+        start = datetime.datetime.now()
+        
+        inset = "   "
+
+        self.model.set_env(self.training)
+        
+        with output(initial_len = 25, interval = 0) as lines:
+            
+            lines[0] = "\n"
+            lines[3] = "\n"
+            
+            lines[1] = "{}Epoch {}".format(inset, epoch)
+            
+            def callback(a, b):
                 
-    def run(self, *, epochs, tests):
+                matches = self.training.get_attr("last_observation")
+                results.temps(matches)
+                
+                update(
+                    clock = int((3000 - matches[0][0]["steps_left"]) * 1.8), 
+                    scores = list(map(lambda match: "{}:{}".format(match[0]["score"][0], match[0]["score"][1]), matches))
+                )
+            
+            def update(*, clock, scores = None):
+                
+                if scores == None:
+                    scores = ["0:0"] * self.parallel
+                
+                matches = list(map(lambda a: "Match {}".format(a), range(1, self.parallel + 1)))
+                
+                table = reduce(lambda a, b: a + b, [
+                    self.separator(),
+                    self.section(values = (results.results() + self.blank() + results.goals() + self.blank() + [("Time", self.duration((datetime.datetime.now() - start).seconds)), ("Experience", self.duration(self.experience + int((clock / 60) * self.parallel))), ("Match Clock", self.duration(clock))])),
+                    self.separator(),
+                    self.section(values = list(zip(matches, scores))),
+                    self.separator()
+                ], [])
+                
+                for index, row in enumerate(table): 
+                    lines[4 + index] = row
+                
+            for episode in range(episodes):
+                
+                lines[2] = "{}Episode {} of {} - [{}]".format(inset, episode, episodes, self.progress(episode, episodes))
+                
+                update(clock = 0)
+                
+                self.model.learn(total_timesteps = 3000 * self.parallel, callback = callback)
+                
+                for index, match in enumerate(self.training.get_attr("last_observation")):
+                    results.record(scored = match[0]["score"][0], conceded = match[0]["score"][1])
         
-         # model = PPO2(MlpPolicy, env, verbose=1)
-         # model.learn(total_timesteps=25000)
-         # model.save("ppo2_cartpole")
-         # 
-         # del model # remove to demonstrate saving and loading
-         # 
+                self.experience += self.parallel * 90
         
-         
-        self.model = PPO2(
-            policy = MlpPolicy,
-            env = self.training,
-            verbose = 1
-        )
+            self.dump(lines)
         
-        self.model.learn(total_timesteps=25000)
-        self.model.save("ppo2-football")
-        # 
-        # with output(initial_len = 6, interval = 0) as lines:
-        # 
-        #     def callback(locals, globals):
-        # 
-        #         global rewards
-        # 
-        #         ratio = sum(locals["true_reward"]) / max(5, locals["self"].runner.rounds)
-        #         rewards.append(ratio)
-        # 
-        #         lines[0] = "Epoch {} of {} - {}% [{}{}]".format(locals["update"], epochs, int(locals["update"] / epochs * 100), "#" * int(locals["update"] / (epochs / 10)), " " * (10 - int(locals["update"] / (epochs / 10))))
-        #         lines[1] = "Recent Reward: {:.4f} - Average Reward: {:.4f} - Loss: {:.4f} - Seconds: {:.2f}".format(ratio, np.mean(rewards), np.mean(locals["loss_vals"]), locals["t_now"] - locals["t_start"])
-        # 
-        #         # lines[1] = accuracy
-        #         # lines[2] = locals.keys()
-        #         # lines[3] = dict(filter(lambda a: a[0] not in ["mb_states", "flat_indices", "neglogpacs", "masks", "returns", "mb_flat_inds", "states", "true_reward", "inds", "values", "actions", "mbinds", "obs", "callback"], locals.items()))
-        #         # lines[2] = locals.keys()
-        #         # lines[3] = locals#print([logging.getLogger(name) for name in logging.root.manager.loggerDict])
-        #         # counter += 1
-        # 
-        # 
-        #     self.model.learn(total_timesteps = 50000, callback = callback)
+    def test(self, *, tests):
         
-        # if os.path.exists(self.path):
-        # 
-        #     if len(os.listdir(self.path)) > 0:
-        #         print("Directory: {} is not empty. Please make sure you are not overwriting existing models and try again.".format(self.path))
-        #         return
-        # else:
-        #     os.mkdir(self.path)
-        # 
-        # best = {"model": None, "score": 0.0}
-        # 
-        # for epoch in range(1, epochs + 1):
-        # 
-        #     with output(initial_len = 6, interval = 0) as lines:        
-        # 
-        #         lines[2] = "\r\n"
-        #         lines[5] = "\r\n"
-        # 
-        #         results = {"training": [], "testing": []}
-        # 
-        #         start = datetime.datetime.now()
-        # 
-        #         for episode in range(1, episodes + 1):
-        # 
-        #             done = False
-        #             results["training"].append(0)
-        #             state = np.reshape(self.training.reset(), [1, self.inputs])
-        # 
-        #             lines[0] = "Epoch {} of {} - {}% [{}{}]".format(epoch, epochs, int(episode / episodes * 100), "#" * int(episode / (episodes / 10)), " " * (10 - int(episode / (episodes / 10))))
-        #             lines[1] = "Average Training Reward: {:.4f} - Epsilon: {:.4f} - Seconds: {}".format(np.mean(results["training"]), self.params.epsilon, (datetime.datetime.now() - start).seconds)
-        # 
-        #             while not done:
-        # 
-        #                 action = self.action(state)
-        #                 next, reward, done, info = self.training.step(action)
-        #                 next = np.reshape(next, [1, self.inputs])
-        # 
-        #                 self.record(state = state, action = action, reward = reward, next = next, done = done)
-        # 
-        #                 results["training"][episode - 1] += reward
-        #                 state = next
-        # 
-        #                 lines[1] = "Average Training Reward: {:.4f} - Epsilon: {:.4f} - Seconds: {}".format(np.mean(results["training"]), self.params.epsilon, (datetime.datetime.now() - start).seconds)
-        # 
-        #             if len(self.memory) > 500:
-        #                 self.train(100)
-        # 
-        #         start = datetime.datetime.now()
-        #         lines[4] = "Testing Average: 0.0 - Best Score: {} - {:.2f} - Seconds: 0".format(best["model"], best["score"])
-        # 
-        #         for test in range(1, tests + 1):
-        # 
-        #             done = False
-        #             results["testing"].append(0)
-        #             state = np.reshape(self.testing.reset(), [1, self.inputs])
-        # 
-        #             lines[3] = "Test {} of {} - {}% [{}{}]".format(test, tests, int(test / tests * 100), "#" * int(test / (tests / 10)), " " * (10 - int(test / (tests / 10))))
-        # 
-        #             while not done:
-        # 
-        #                 action = self.action(state, explore = False)
-        #                 next, reward, done, info = self.testing.step(action)
-        # 
-        #                 results["testing"][test - 1] += reward
-        # 
-        #                 lines[4] = "Testing Average: {:.2f} - Best Score: {} - {:.2f} - Seconds: {}".format(np.mean(results["testing"]), best["model"], best["score"], (datetime.datetime.now() - start).seconds)
-        # 
-        #         final = np.mean(results["testing"])
-        # 
-        #         if final >= 0.5:
-        # 
-        #             self.save(os.path.join(self.path, self.name.format(epoch) + ".hdf5"))
-        # 
-        #         if final >= best["score"] and final > 0.0:
-        # 
-        #             lines[4] = "New Best Score: {}".format(final)
-        #             best = {"score": final, "model": self.name.format(epoch)}
-        # 
-        #         with open(os.path.join(self.path, "results.txt"), "a+") as dump:
-        #             for line in lines: dump.write(line + ("\r\n" if line != "\r\n" else ""))
+        self.model.set_env(self.testing)
 
-    def load(self, path):
+        results = Results()
+
+        start = datetime.datetime.now()
+
+        matches = list(map(lambda a: ("Test {}".format(a), "-"), range(1, tests + 1)))
+
+        with output(initial_len = 7 + tests, interval = 0) as lines:
+
+            lines[-1] = "\n"
+            lines[-2] = "\n"
+
+            def update(*, clock):
+
+                table = table = reduce(lambda a, b: a + b, [
+                    self.section(values = (matches + self.blank() + [("Time", self.duration((datetime.datetime.now() - start).seconds))] + results.testing() + [("Match Clock", self.duration(clock))])),
+                    self.separator()
+                ], [])
+                
+                for index, row in enumerate(table): 
+                    lines[index] = row
+
+            for test in range(tests):
+
+                done = False
+                score = [0, 0]
+                state = self.testing.reset()
+
+                while not done:
+
+                    action, futures = self.model.predict(state)
+                    state, reward, dones, info = self.testing.step(action)
+                    
+                    done = dones[0]
+                    
+                    match = self.testing.get_attr("last_observation")
+                    
+                    if not done:
+                        score = match[0][0]["score"]
+                        matches[test] = (matches[test][0], "{}:{}".format(score[0], score[1]))
+                    
+                    clock = int((3000 - match[0][0]["steps_left"]) * 1.8)
+                    
+                    if clock % 15 == 0:
+                        update(clock = clock)
+
+                results.record(scored = score[0], conceded = score[1])
+
+            self.dump(lines)
+                    
+    def run(self, *, epochs, episodes, tests):
         
-        self.model.load_weights(path)
-
-    def save(self, path):
+        if os.path.exists(self.path):
+    
+            if len(os.listdir(self.path)) > 0:
+                print("Directory: {} is not empty. Please make sure you are not overwriting existing models and try again.".format(self.path))
+                return
+        else:
+            os.mkdir(self.path)
         
-        self.model.save_weights(path)
-
-
-
-
+        for epoch in range(1, epochs):
+            
+            self.train(epoch = epoch, episodes = episodes, )
+            self.test(tests = tests)
+            
+            self.model.save(os.path.join(self.path, self.name.format(epoch)))
+        
 
 agent = Agent(
     version = "v1",
-    env = {"env_name": "11_vs_11_easy_stochastic", "representation": "simple115", "render": True, "rewards": "scoring", "enable_sides_swap": True},
+    env = {"env_name": "11_vs_11_easy_stochastic", "representation": "simple115", "render": False, "rewards": "scoring,checkpoints", "enable_sides_swap": False},
     weights = None,
-    parallel = 1,
-    allowed = ["action_short_pass", "action_shot", "action_left", "action_top_left", "action_top", "action_top_right", "action_right", "action_bottom_right", "action_bottom", "action_bottom_left", "action_dribble", "action_release_dribble"]
+    parallel = 5,
+    verbose = False
 )
 
-# agent.run(epochs = 50, tests = 10)
-
-agent.test()
-
-
+agent.run(epochs = 100, episodes = 20, tests = 3)
 
 
 
