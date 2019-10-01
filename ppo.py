@@ -3,6 +3,7 @@
 
 import os
 import gym
+import time
 import random
 import logging
 import datetime
@@ -11,8 +12,6 @@ import numpy as np
 import gfootball.env as football
 
 from tensorflow.python.util import deprecation
-# 
-# import stable_baselines as sb
 
 from stable_baselines.common.policies import MlpPolicy, MlpLnLstmPolicy
 from stable_baselines.common.vec_env import SubprocVecEnv
@@ -21,8 +20,6 @@ from stable_baselines import PPO2
 from functools import reduce
 from reprint import output
 
-
-rewards = []
 
 class Results:
     
@@ -260,12 +257,14 @@ class Agent:
                 
                 matches = self.training.get_attr("last_observation")
                 
-                for index, match in enumerate(matches):
+                for match in matches:
                     results.record(scored = match[0]["score"][0], conceded = match[0]["score"][1])
         
                 self.experience += self.parallel * 90
         
                 update(clock = 5400, scores = list(map(lambda match: "{}:{}".format(match[0]["score"][0], match[0]["score"][1]), matches)))
+                
+                time.sleep(1)
         
             self.dump(lines)
         
