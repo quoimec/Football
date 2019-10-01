@@ -255,16 +255,14 @@ class Agent:
                 
                 self.model.learn(total_timesteps = 3000 * self.parallel, callback = callback)
                 
-                matches = self.training.get_attr("last_observation")
-                
-                for match in matches:
+                for index, match in enumerate(self.training.get_attr("last_observation")):
                     results.record(scored = match[0]["score"][0], conceded = match[0]["score"][1])
         
                 self.experience += self.parallel * 90
         
-                update(clock = 5400, scores = list(map(lambda match: "{}:{}".format(match[0]["score"][0], match[0]["score"][1]), matches)))
-                
-                time.sleep(1)
+                update(clock = 5400, scores = list(map(lambda match: "{}:{}".format(match[0]["score"][0], match[0]["score"][1]), self.training.get_attr("last_observation"))))
+        
+                time.sleep(10)
         
             self.dump(lines)
         
