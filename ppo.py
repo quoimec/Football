@@ -94,7 +94,7 @@ class Results:
 
 class Agent:
     
-    def __init__(self, version, env, parallel = 1, verbose = False, weights = None):
+    def __init__(self, version, env, parallel = 1, experience = 0, verbose = False, weights = None):
         
         self.version = version
         self.name = "football-ppo{}".format(version) + "-e{}"
@@ -167,7 +167,7 @@ class Agent:
         else:
             self.model = PPO2.load(weights)
     
-        self.experience = 0
+        self.experience = experience
     
     def duration(self, time):
         
@@ -250,7 +250,7 @@ class Agent:
                 for index, row in enumerate(table): 
                     lines[4 + index] = row
                 
-            for episode in range(episodes):
+            for episode in range(1, episodes + 1):
                 
                 lines[2] = "{}Episode {} of {} - [{}]".format(inset, episode, episodes, self.progress(episode, episodes))
                 
@@ -258,10 +258,14 @@ class Agent:
                 
                 self.model.learn(total_timesteps = 3000 * self.parallel, callback = callback)
                 
-                for index, match in enumerate(self.training.get_attr("last_observation")):
+                matches = self.training.get_attr("last_observation")
+                
+                for index, match in enumerate(matches):
                     results.record(scored = match[0]["score"][0], conceded = match[0]["score"][1])
         
                 self.experience += self.parallel * 90
+        
+                update(clock = 5400, scores = list(map(lambda match: "{}:{}".format(match[0]["score"][0], match[0]["score"][1]), matches)))
         
             self.dump(lines)
         
@@ -337,15 +341,23 @@ class Agent:
         
 
 agent = Agent(
-    version = "v1",
-    env = {"env_name": "11_vs_11_easy_stochastic", "representation": "simple115", "render": False, "rewards": "scoring,checkpoints", "enable_sides_swap": False},
-    weights = None,
+    version = "v2",
+    env = {"env_name": "11_vs_11_stochastic", "representation": "simple115", "render": False, "rewards": "scoring,checkpoints", "enable_sides_swap": False},
+    weights = "models/football-ppo-v1/football-ppov1-e34",
+    experience = 306000,
     parallel = 5,
     verbose = False
 )
 
 agent.run(epochs = 100, episodes = 20, tests = 3)
 
-
-
+# agent = Agent(
+#     version = "v1",
+#     env = {"env_name": "11_vs_11_easy_stochastic", "representation": "simple115", "render": False, "rewards": "scoring,checkpoints", "enable_sides_swap": False},
+#     weights = None,
+#     parallel = 5,
+#     verbose = False
+# )
+# 
+# agent.run(epochs = 100, episodes = 20, tests = 3)
 
