@@ -1,0 +1,1710 @@
+
+
+   Epoch 1
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                            0 |
+   | Lost                          67 |
+   | Drawn                         28 |
+   | Points                        28 |
+   |                                  |
+   | Goals For                      1 |
+   | Goals Against                117 |
+   | Goal Ratio                  -116 |
+   |                                  |
+   | Time                       19:43 |
+   | Experience                149:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:1 |
+   | Match 2                      0:1 |
+   | Match 3                      0:0 |
+   | Match 4                      0:1 |
+   | Match 5                      0:0 |
+   ------------------------------------
+   | Test 1                       0:1 |
+   | Test 2                       1:0 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:31 |
+   | Points                         3 |
+   | Goal Ratio                     0 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 2
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                            2 |
+   | Lost                          32 |
+   | Drawn                         61 |
+   | Points                        67 |
+   |                                  |
+   | Goals For                      5 |
+   | Goals Against                 39 |
+   | Goal Ratio                   -34 |
+   |                                  |
+   | Time                       19:55 |
+   | Experience                299:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:1 |
+   | Match 3                      0:1 |
+   | Match 4                      0:0 |
+   | Match 5                      0:0 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       0:1 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:28 |
+   | Points                         1 |
+   | Goal Ratio                    -1 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 3
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                            6 |
+   | Lost                          26 |
+   | Drawn                         63 |
+   | Points                        81 |
+   |                                  |
+   | Goals For                     15 |
+   | Goals Against                 38 |
+   | Goal Ratio                   -23 |
+   |                                  |
+   | Time                       20:16 |
+   | Experience                449:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:0 |
+   | Match 3                      0:1 |
+   | Match 4                      0:0 |
+   | Match 5                      1:1 |
+   ------------------------------------
+   | Test 1                       1:0 |
+   | Test 2                       0:0 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:26 |
+   | Points                         4 |
+   | Goal Ratio                     1 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 4
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                            8 |
+   | Lost                          33 |
+   | Drawn                         54 |
+   | Points                        78 |
+   |                                  |
+   | Goals For                      8 |
+   | Goals Against                 48 |
+   | Goal Ratio                   -40 |
+   |                                  |
+   | Time                       20:14 |
+   | Experience                599:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:1 |
+   | Match 2                      0:1 |
+   | Match 3                      0:0 |
+   | Match 4                      0:0 |
+   | Match 5                      0:1 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       0:0 |
+   | Test 3                       0:1 |
+   |                                  |
+   | Time                       01:28 |
+   | Points                         2 |
+   | Goal Ratio                     0 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 5
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                            3 |
+   | Lost                          26 |
+   | Drawn                         66 |
+   | Points                        75 |
+   |                                  |
+   | Goals For                      7 |
+   | Goals Against                 33 |
+   | Goal Ratio                   -26 |
+   |                                  |
+   | Time                       19:44 |
+   | Experience                749:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:1 |
+   | Match 2                      0:0 |
+   | Match 3                      0:0 |
+   | Match 4                      0:0 |
+   | Match 5                      0:1 |
+   ------------------------------------
+   | Test 1                       1:1 |
+   | Test 2                       0:1 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:28 |
+   | Points                         1 |
+   | Goal Ratio                    -1 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 6
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                            4 |
+   | Lost                          28 |
+   | Drawn                         63 |
+   | Points                        75 |
+   |                                  |
+   | Goals For                      6 |
+   | Goals Against                 38 |
+   | Goal Ratio                   -32 |
+   |                                  |
+   | Time                       19:33 |
+   | Experience                899:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:0 |
+   | Match 3                      0:0 |
+   | Match 4                      0:2 |
+   | Match 5                      0:2 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       0:0 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:28 |
+   | Points                         2 |
+   | Goal Ratio                     0 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 7
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           10 |
+   | Lost                          19 |
+   | Drawn                         66 |
+   | Points                        96 |
+   |                                  |
+   | Goals For                     18 |
+   | Goals Against                 31 |
+   | Goal Ratio                   -13 |
+   |                                  |
+   | Time                       19:28 |
+   | Experience               1049:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:0 |
+   | Match 3                      0:1 |
+   | Match 4                      0:1 |
+   | Match 5                      0:0 |
+   ------------------------------------
+   | Test 1                       0:1 |
+   | Test 2                       0:0 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:27 |
+   | Points                         1 |
+   | Goal Ratio                    -1 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 8
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           12 |
+   | Lost                          18 |
+   | Drawn                         65 |
+   | Points                       101 |
+   |                                  |
+   | Goals For                     15 |
+   | Goals Against                 24 |
+   | Goal Ratio                    -9 |
+   |                                  |
+   | Time                       19:26 |
+   | Experience               1199:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:1 |
+   | Match 3                      0:0 |
+   | Match 4                      0:0 |
+   | Match 5                      0:0 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       1:0 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:28 |
+   | Points                         4 |
+   | Goal Ratio                     1 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 9
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           12 |
+   | Lost                          18 |
+   | Drawn                         65 |
+   | Points                       101 |
+   |                                  |
+   | Goals For                     22 |
+   | Goals Against                 30 |
+   | Goal Ratio                    -8 |
+   |                                  |
+   | Time                       20:06 |
+   | Experience               1349:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:0 |
+   | Match 3                      0:0 |
+   | Match 4                      0:1 |
+   | Match 5                      1:1 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       0:0 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:26 |
+   | Points                         2 |
+   | Goal Ratio                     0 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 10
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           13 |
+   | Lost                          19 |
+   | Drawn                         63 |
+   | Points                       102 |
+   |                                  |
+   | Goals For                     20 |
+   | Goals Against                 29 |
+   | Goal Ratio                    -9 |
+   |                                  |
+   | Time                       19:46 |
+   | Experience               1499:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:0 |
+   | Match 3                      0:0 |
+   | Match 4                      0:0 |
+   | Match 5                      0:2 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       0:0 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:27 |
+   | Points                         2 |
+   | Goal Ratio                     0 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 11
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           11 |
+   | Lost                          25 |
+   | Drawn                         59 |
+   | Points                        92 |
+   |                                  |
+   | Goals For                     15 |
+   | Goals Against                 32 |
+   | Goal Ratio                   -17 |
+   |                                  |
+   | Time                       19:39 |
+   | Experience               1649:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:2 |
+   | Match 3                      0:0 |
+   | Match 4                      1:0 |
+   | Match 5                      0:1 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       1:0 |
+   | Test 3                       0:1 |
+   |                                  |
+   | Time                       01:26 |
+   | Points                         4 |
+   | Goal Ratio                     1 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 12
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           11 |
+   | Lost                          18 |
+   | Drawn                         66 |
+   | Points                        99 |
+   |                                  |
+   | Goals For                     19 |
+   | Goals Against                 26 |
+   | Goal Ratio                    -7 |
+   |                                  |
+   | Time                       20:50 |
+   | Experience               1799:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:0 |
+   | Match 3                      0:0 |
+   | Match 4                      0:0 |
+   | Match 5                      0:0 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       1:0 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:29 |
+   | Points                         4 |
+   | Goal Ratio                     1 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 13
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           10 |
+   | Lost                          27 |
+   | Drawn                         58 |
+   | Points                        88 |
+   |                                  |
+   | Goals For                     12 |
+   | Goals Against                 36 |
+   | Goal Ratio                   -24 |
+   |                                  |
+   | Time                       19:41 |
+   | Experience               1949:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:0 |
+   | Match 3                      0:0 |
+   | Match 4                      0:1 |
+   | Match 5                      0:1 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       0:1 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:27 |
+   | Points                         1 |
+   | Goal Ratio                    -1 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 14
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           18 |
+   | Lost                          12 |
+   | Drawn                         65 |
+   | Points                       119 |
+   |                                  |
+   | Goals For                     27 |
+   | Goals Against                 17 |
+   | Goal Ratio                    10 |
+   |                                  |
+   | Time                       19:39 |
+   | Experience               2099:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      2:0 |
+   | Match 2                      0:0 |
+   | Match 3                      0:0 |
+   | Match 4                      0:0 |
+   | Match 5                      0:1 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       0:0 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:27 |
+   | Points                         2 |
+   | Goal Ratio                     0 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 15
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           21 |
+   | Lost                          16 |
+   | Drawn                         58 |
+   | Points                       121 |
+   |                                  |
+   | Goals For                     29 |
+   | Goals Against                 22 |
+   | Goal Ratio                     7 |
+   |                                  |
+   | Time                       19:42 |
+   | Experience               2249:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:1 |
+   | Match 2                      0:0 |
+   | Match 3                      0:0 |
+   | Match 4                      0:0 |
+   | Match 5                      0:0 |
+   ------------------------------------
+   | Test 1                       0:1 |
+   | Test 2                       0:0 |
+   | Test 3                       1:0 |
+   |                                  |
+   | Time                       01:29 |
+   | Points                         1 |
+   | Goal Ratio                    -1 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 16
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           12 |
+   | Lost                          12 |
+   | Drawn                         71 |
+   | Points                       107 |
+   |                                  |
+   | Goals For                     24 |
+   | Goals Against                 23 |
+   | Goal Ratio                     1 |
+   |                                  |
+   | Time                       19:27 |
+   | Experience               2399:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:1 |
+   | Match 2                      0:0 |
+   | Match 3                      1:0 |
+   | Match 4                      0:0 |
+   | Match 5                      1:0 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       0:1 |
+   | Test 3                       1:0 |
+   |                                  |
+   | Time                       01:28 |
+   | Points                         1 |
+   | Goal Ratio                    -1 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 17
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           13 |
+   | Lost                          19 |
+   | Drawn                         63 |
+   | Points                       102 |
+   |                                  |
+   | Goals For                     17 |
+   | Goals Against                 24 |
+   | Goal Ratio                    -7 |
+   |                                  |
+   | Time                       19:35 |
+   | Experience               2549:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:0 |
+   | Match 3                      0:0 |
+   | Match 4                      1:0 |
+   | Match 5                      0:0 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       0:0 |
+   | Test 3                       0:1 |
+   |                                  |
+   | Time                       01:28 |
+   | Points                         2 |
+   | Goal Ratio                     0 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 18
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           19 |
+   | Lost                          19 |
+   | Drawn                         57 |
+   | Points                       114 |
+   |                                  |
+   | Goals For                     35 |
+   | Goals Against                 41 |
+   | Goal Ratio                    -6 |
+   |                                  |
+   | Time                       19:54 |
+   | Experience               2699:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:1 |
+   | Match 2                      0:0 |
+   | Match 3                      0:1 |
+   | Match 4                      1:0 |
+   | Match 5                      0:1 |
+   ------------------------------------
+   | Test 1                       0:1 |
+   | Test 2                       0:0 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:27 |
+   | Points                         1 |
+   | Goal Ratio                    -1 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 19
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           12 |
+   | Lost                          27 |
+   | Drawn                         56 |
+   | Points                        92 |
+   |                                  |
+   | Goals For                     24 |
+   | Goals Against                 38 |
+   | Goal Ratio                   -14 |
+   |                                  |
+   | Time                       19:52 |
+   | Experience               2849:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      1:1 |
+   | Match 3                      0:0 |
+   | Match 4                      1:0 |
+   | Match 5                      0:0 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       0:0 |
+   | Test 3                       0:1 |
+   |                                  |
+   | Time                       01:27 |
+   | Points                         2 |
+   | Goal Ratio                     0 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 20
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           10 |
+   | Lost                          27 |
+   | Drawn                         58 |
+   | Points                        88 |
+   |                                  |
+   | Goals For                     23 |
+   | Goals Against                 42 |
+   | Goal Ratio                   -19 |
+   |                                  |
+   | Time                       19:31 |
+   | Experience               2999:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      1:2 |
+   | Match 3                      2:0 |
+   | Match 4                      0:0 |
+   | Match 5                      0:0 |
+   ------------------------------------
+   | Test 1                       3:0 |
+   | Test 2                       1:1 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:27 |
+   | Points                         4 |
+   | Goal Ratio                     3 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 21
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           12 |
+   | Lost                          19 |
+   | Drawn                         64 |
+   | Points                       100 |
+   |                                  |
+   | Goals For                     18 |
+   | Goals Against                 27 |
+   | Goal Ratio                    -9 |
+   |                                  |
+   | Time                       19:38 |
+   | Experience               3149:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:0 |
+   | Match 3                      0:0 |
+   | Match 4                      0:0 |
+   | Match 5                      0:1 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       0:0 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:27 |
+   | Points                         2 |
+   | Goal Ratio                     0 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 22
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           12 |
+   | Lost                          13 |
+   | Drawn                         70 |
+   | Points                       106 |
+   |                                  |
+   | Goals For                     22 |
+   | Goals Against                 24 |
+   | Goal Ratio                    -2 |
+   |                                  |
+   | Time                       19:45 |
+   | Experience               3299:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:2 |
+   | Match 3                      1:0 |
+   | Match 4                      0:1 |
+   | Match 5                      1:0 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       0:1 |
+   | Test 3                       0:1 |
+   |                                  |
+   | Time                       01:27 |
+   | Points                         1 |
+   | Goal Ratio                    -1 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 23
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           10 |
+   | Lost                          17 |
+   | Drawn                         68 |
+   | Points                        98 |
+   |                                  |
+   | Goals For                     20 |
+   | Goals Against                 31 |
+   | Goal Ratio                   -11 |
+   |                                  |
+   | Time                       19:54 |
+   | Experience               3449:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:1 |
+   | Match 3                      0:0 |
+   | Match 4                      0:0 |
+   | Match 5                      0:0 |
+   ------------------------------------
+   | Test 1                       0:1 |
+   | Test 2                       0:0 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:28 |
+   | Points                         1 |
+   | Goal Ratio                    -1 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 24
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                            6 |
+   | Lost                          26 |
+   | Drawn                         63 |
+   | Points                        81 |
+   |                                  |
+   | Goals For                     12 |
+   | Goals Against                 40 |
+   | Goal Ratio                   -28 |
+   |                                  |
+   | Time                       19:25 |
+   | Experience               3599:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      1:1 |
+   | Match 2                      0:1 |
+   | Match 3                      1:0 |
+   | Match 4                      0:0 |
+   | Match 5                      0:0 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       0:1 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:28 |
+   | Points                         1 |
+   | Goal Ratio                    -1 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 25
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           16 |
+   | Lost                          19 |
+   | Drawn                         60 |
+   | Points                       108 |
+   |                                  |
+   | Goals For                     24 |
+   | Goals Against                 25 |
+   | Goal Ratio                    -1 |
+   |                                  |
+   | Time                       19:37 |
+   | Experience               3749:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:0 |
+   | Match 3                      1:0 |
+   | Match 4                      1:0 |
+   | Match 5                      0:0 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       0:1 |
+   | Test 3                       1:1 |
+   |                                  |
+   | Time                       01:27 |
+   | Points                         1 |
+   | Goal Ratio                    -1 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 26
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           14 |
+   | Lost                          21 |
+   | Drawn                         60 |
+   | Points                       102 |
+   |                                  |
+   | Goals For                     23 |
+   | Goals Against                 34 |
+   | Goal Ratio                   -11 |
+   |                                  |
+   | Time                       19:49 |
+   | Experience               3899:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:1 |
+   | Match 3                      0:1 |
+   | Match 4                      0:0 |
+   | Match 5                      0:0 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       0:1 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:28 |
+   | Points                         1 |
+   | Goal Ratio                    -1 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 27
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           16 |
+   | Lost                          15 |
+   | Drawn                         64 |
+   | Points                       112 |
+   |                                  |
+   | Goals For                     31 |
+   | Goals Against                 25 |
+   | Goal Ratio                     6 |
+   |                                  |
+   | Time                       19:56 |
+   | Experience               4049:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      1:0 |
+   | Match 2                      1:2 |
+   | Match 3                      1:0 |
+   | Match 4                      2:0 |
+   | Match 5                      0:0 |
+   ------------------------------------
+   | Test 1                       1:1 |
+   | Test 2                       0:0 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:27 |
+   | Points                         2 |
+   | Goal Ratio                     0 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 28
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           20 |
+   | Lost                          14 |
+   | Drawn                         61 |
+   | Points                       121 |
+   |                                  |
+   | Goals For                     33 |
+   | Goals Against                 22 |
+   | Goal Ratio                    11 |
+   |                                  |
+   | Time                       19:43 |
+   | Experience               4199:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      1:0 |
+   | Match 3                      0:0 |
+   | Match 4                      0:0 |
+   | Match 5                      0:0 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       0:0 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:27 |
+   | Points                         2 |
+   | Goal Ratio                     0 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 29
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           10 |
+   | Lost                          20 |
+   | Drawn                         65 |
+   | Points                        95 |
+   |                                  |
+   | Goals For                     14 |
+   | Goals Against                 26 |
+   | Goal Ratio                   -12 |
+   |                                  |
+   | Time                       19:40 |
+   | Experience               4349:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:0 |
+   | Match 3                      2:1 |
+   | Match 4                      1:0 |
+   | Match 5                      0:0 |
+   ------------------------------------
+   | Test 1                       0:1 |
+   | Test 2                       0:0 |
+   | Test 3                       0:1 |
+   |                                  |
+   | Time                       01:27 |
+   | Points                         1 |
+   | Goal Ratio                    -1 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 30
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           17 |
+   | Lost                          26 |
+   | Drawn                         52 |
+   | Points                       103 |
+   |                                  |
+   | Goals For                     21 |
+   | Goals Against                 33 |
+   | Goal Ratio                   -12 |
+   |                                  |
+   | Time                       19:29 |
+   | Experience               4499:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:2 |
+   | Match 3                      1:0 |
+   | Match 4                      1:0 |
+   | Match 5                      0:0 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       0:0 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:28 |
+   | Points                         2 |
+   | Goal Ratio                     0 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 31
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           26 |
+   | Lost                          15 |
+   | Drawn                         54 |
+   | Points                       132 |
+   |                                  |
+   | Goals For                     42 |
+   | Goals Against                 28 |
+   | Goal Ratio                    14 |
+   |                                  |
+   | Time                       19:35 |
+   | Experience               4649:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:0 |
+   | Match 3                      1:0 |
+   | Match 4                      0:0 |
+   | Match 5                      1:2 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       1:0 |
+   | Test 3                       1:1 |
+   |                                  |
+   | Time                       01:27 |
+   | Points                         4 |
+   | Goal Ratio                     1 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 32
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           23 |
+   | Lost                          24 |
+   | Drawn                         48 |
+   | Points                       117 |
+   |                                  |
+   | Goals For                     47 |
+   | Goals Against                 48 |
+   | Goal Ratio                    -1 |
+   |                                  |
+   | Time                       19:40 |
+   | Experience               4799:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:1 |
+   | Match 2                      0:0 |
+   | Match 3                      1:0 |
+   | Match 4                      0:0 |
+   | Match 5                      0:1 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       2:0 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:26 |
+   | Points                         4 |
+   | Goal Ratio                     2 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 33
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           23 |
+   | Lost                          19 |
+   | Drawn                         53 |
+   | Points                       122 |
+   |                                  |
+   | Goals For                     35 |
+   | Goals Against                 32 |
+   | Goal Ratio                     3 |
+   |                                  |
+   | Time                       19:49 |
+   | Experience               4949:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      1:0 |
+   | Match 2                      0:0 |
+   | Match 3                      1:1 |
+   | Match 4                      1:0 |
+   | Match 5                      0:0 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       2:0 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:29 |
+   | Points                         4 |
+   | Goal Ratio                     2 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 34
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           28 |
+   | Lost                          16 |
+   | Drawn                         51 |
+   | Points                       135 |
+   |                                  |
+   | Goals For                     38 |
+   | Goals Against                 23 |
+   | Goal Ratio                    15 |
+   |                                  |
+   | Time                       19:56 |
+   | Experience               5099:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      1:0 |
+   | Match 3                      0:0 |
+   | Match 4                      0:0 |
+   | Match 5                      0:0 |
+   ------------------------------------
+   | Test 1                       0:1 |
+   | Test 2                       0:1 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:27 |
+   | Points                         0 |
+   | Goal Ratio                    -2 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 35
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           22 |
+   | Lost                          15 |
+   | Drawn                         58 |
+   | Points                       124 |
+   |                                  |
+   | Goals For                     32 |
+   | Goals Against                 23 |
+   | Goal Ratio                     9 |
+   |                                  |
+   | Time                       19:38 |
+   | Experience               5249:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:0 |
+   | Match 3                      0:1 |
+   | Match 4                      0:0 |
+   | Match 5                      0:1 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       0:1 |
+   | Test 3                       0:1 |
+   |                                  |
+   | Time                       01:28 |
+   | Points                         1 |
+   | Goal Ratio                    -1 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 36
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                            6 |
+   | Lost                          28 |
+   | Drawn                         61 |
+   | Points                        79 |
+   |                                  |
+   | Goals For                      7 |
+   | Goals Against                 36 |
+   | Goal Ratio                   -29 |
+   |                                  |
+   | Time                       20:00 |
+   | Experience               5399:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:1 |
+   | Match 2                      0:1 |
+   | Match 3                      0:0 |
+   | Match 4                      0:1 |
+   | Match 5                      0:2 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       0:0 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:28 |
+   | Points                         2 |
+   | Goal Ratio                     0 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 37
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                            5 |
+   | Lost                          26 |
+   | Drawn                         64 |
+   | Points                        79 |
+   |                                  |
+   | Goals For                      7 |
+   | Goals Against                 40 |
+   | Goal Ratio                   -33 |
+   |                                  |
+   | Time                       19:37 |
+   | Experience               5549:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:0 |
+   | Match 3                      0:0 |
+   | Match 4                      0:1 |
+   | Match 5                      0:0 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       0:0 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:29 |
+   | Points                         2 |
+   | Goal Ratio                     0 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 38
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           16 |
+   | Lost                          26 |
+   | Drawn                         53 |
+   | Points                       101 |
+   |                                  |
+   | Goals For                     28 |
+   | Goals Against                 40 |
+   | Goal Ratio                   -12 |
+   |                                  |
+   | Time                       19:35 |
+   | Experience               5699:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:1 |
+   | Match 3                      1:0 |
+   | Match 4                      0:1 |
+   | Match 5                      0:1 |
+   ------------------------------------
+   | Test 1                       0:1 |
+   | Test 2                       0:0 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:28 |
+   | Points                         1 |
+   | Goal Ratio                    -1 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 39
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           13 |
+   | Lost                          24 |
+   | Drawn                         58 |
+   | Points                        97 |
+   |                                  |
+   | Goals For                     18 |
+   | Goals Against                 32 |
+   | Goal Ratio                   -14 |
+   |                                  |
+   | Time                       19:17 |
+   | Experience               5849:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:0 |
+   | Match 3                      0:0 |
+   | Match 4                      0:0 |
+   | Match 5                      0:1 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       0:0 |
+   | Test 3                       0:1 |
+   |                                  |
+   | Time                       01:28 |
+   | Points                         2 |
+   | Goal Ratio                     0 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 40
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                            8 |
+   | Lost                          20 |
+   | Drawn                         67 |
+   | Points                        91 |
+   |                                  |
+   | Goals For                     12 |
+   | Goals Against                 29 |
+   | Goal Ratio                   -17 |
+   |                                  |
+   | Time                       19:28 |
+   | Experience               5999:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      1:0 |
+   | Match 2                      0:1 |
+   | Match 3                      1:1 |
+   | Match 4                      0:0 |
+   | Match 5                      0:0 |
+   ------------------------------------
+   | Test 1                       0:1 |
+   | Test 2                       0:1 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:28 |
+   | Points                         0 |
+   | Goal Ratio                    -2 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 41
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           22 |
+   | Lost                          20 |
+   | Drawn                         53 |
+   | Points                       119 |
+   |                                  |
+   | Goals For                     40 |
+   | Goals Against                 31 |
+   | Goal Ratio                     9 |
+   |                                  |
+   | Time                       19:55 |
+   | Experience               6149:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      2:0 |
+   | Match 2                      1:0 |
+   | Match 3                      1:0 |
+   | Match 4                      0:0 |
+   | Match 5                      0:0 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       0:0 |
+   | Test 3                       1:1 |
+   |                                  |
+   | Time                       01:29 |
+   | Points                         2 |
+   | Goal Ratio                     0 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 42
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           24 |
+   | Lost                          20 |
+   | Drawn                         51 |
+   | Points                       123 |
+   |                                  |
+   | Goals For                     38 |
+   | Goals Against                 32 |
+   | Goal Ratio                     6 |
+   |                                  |
+   | Time                       19:50 |
+   | Experience               6299:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:0 |
+   | Match 3                      0:0 |
+   | Match 4                      0:0 |
+   | Match 5                      0:0 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       0:0 |
+   | Test 3                       1:0 |
+   |                                  |
+   | Time                       01:28 |
+   | Points                         2 |
+   | Goal Ratio                     0 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 43
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           12 |
+   | Lost                          21 |
+   | Drawn                         62 |
+   | Points                        98 |
+   |                                  |
+   | Goals For                     19 |
+   | Goals Against                 27 |
+   | Goal Ratio                    -8 |
+   |                                  |
+   | Time                       19:34 |
+   | Experience               6449:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:0 |
+   | Match 3                      0:0 |
+   | Match 4                      1:0 |
+   | Match 5                      0:0 |
+   ------------------------------------
+   | Test 1                       0:1 |
+   | Test 2                       1:0 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:27 |
+   | Points                         3 |
+   | Goal Ratio                     0 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 44
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           22 |
+   | Lost                          32 |
+   | Drawn                         41 |
+   | Points                       107 |
+   |                                  |
+   | Goals For                     32 |
+   | Goals Against                 38 |
+   | Goal Ratio                    -6 |
+   |                                  |
+   | Time                       20:00 |
+   | Experience               6599:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      0:1 |
+   | Match 2                      0:0 |
+   | Match 3                      1:1 |
+   | Match 4                      0:0 |
+   | Match 5                      0:0 |
+   ------------------------------------
+   | Test 1                       1:0 |
+   | Test 2                       0:0 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:29 |
+   | Points                         4 |
+   | Goal Ratio                     1 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 45
+   Episode 19 of 20 - [######### ]
+
+
+   ------------------------------------
+   | Played                        95 |
+   | Won                           17 |
+   | Lost                          13 |
+   | Drawn                         65 |
+   | Points                       116 |
+   |                                  |
+   | Goals For                     28 |
+   | Goals Against                 22 |
+   | Goal Ratio                     6 |
+   |                                  |
+   | Time                       19:56 |
+   | Experience               6749:51 |
+   | Match Clock                88:19 |
+   ------------------------------------
+   | Match 1                      2:0 |
+   | Match 2                      1:0 |
+   | Match 3                      0:1 |
+   | Match 4                      0:0 |
+   | Match 5                      0:0 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       0:0 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:29 |
+   | Points                         2 |
+   | Goal Ratio                     0 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
