@@ -1,0 +1,304 @@
+
+
+   Epoch 1
+   Episode 20 of 20 - [##########]
+
+
+   ------------------------------------
+   | Played                       100 |
+   | Won                            4 |
+   | Lost                          57 |
+   | Drawn                         39 |
+   | Points                        51 |
+   |                                  |
+   | Goals For                      6 |
+   | Goals Against                 80 |
+   | Goal Ratio                   -74 |
+   |                                  |
+   | Time                      102:01 |
+   | Experience               5257:30 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:0 |
+   | Match 3                      0:1 |
+   | Match 4                      0:1 |
+   | Match 5                      0:1 |
+   ------------------------------------
+   | Test 1                       0:3 |
+   | Test 2                       0:1 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:27 |
+   | Points                         0 |
+   | Goal Ratio                    -4 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 2
+   Episode 20 of 20 - [##########]
+
+
+   ------------------------------------
+   | Played                       100 |
+   | Won                            2 |
+   | Lost                          58 |
+   | Drawn                         40 |
+   | Points                        46 |
+   |                                  |
+   | Goals For                      8 |
+   | Goals Against                 92 |
+   | Goal Ratio                   -84 |
+   |                                  |
+   | Time                      102:46 |
+   | Experience               5407:30 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:2 |
+   | Match 2                      0:0 |
+   | Match 3                      0:0 |
+   | Match 4                      1:1 |
+   | Match 5                      0:1 |
+   ------------------------------------
+   | Test 1                       0:1 |
+   | Test 2                       0:0 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:25 |
+   | Points                         1 |
+   | Goal Ratio                    -1 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 3
+   Episode 20 of 20 - [##########]
+
+
+   ------------------------------------
+   | Played                       100 |
+   | Won                            3 |
+   | Lost                          55 |
+   | Drawn                         42 |
+   | Points                        51 |
+   |                                  |
+   | Goals For                      6 |
+   | Goals Against                 89 |
+   | Goal Ratio                   -83 |
+   |                                  |
+   | Time                      102:52 |
+   | Experience               5557:30 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:0 |
+   | Match 3                      0:2 |
+   | Match 4                      1:0 |
+   | Match 5                      0:2 |
+   ------------------------------------
+   | Test 1                       0:2 |
+   | Test 2                       0:0 |
+   | Test 3                       1:2 |
+   |                                  |
+   | Time                       01:25 |
+   | Points                         1 |
+   | Goal Ratio                    -2 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 4
+   Episode 20 of 20 - [##########]
+
+
+   ------------------------------------
+   | Played                       100 |
+   | Won                            2 |
+   | Lost                          63 |
+   | Drawn                         35 |
+   | Points                        41 |
+   |                                  |
+   | Goals For                      4 |
+   | Goals Against                 97 |
+   | Goal Ratio                   -93 |
+   |                                  |
+   | Time                      103:14 |
+   | Experience               5707:30 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:1 |
+   | Match 2                      0:1 |
+   | Match 3                      0:1 |
+   | Match 4                      0:0 |
+   | Match 5                      0:2 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       0:0 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:28 |
+   | Points                         2 |
+   | Goal Ratio                     0 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 5
+   Episode 20 of 20 - [##########]
+
+
+   ------------------------------------
+   | Played                       100 |
+   | Won                            3 |
+   | Lost                          59 |
+   | Drawn                         38 |
+   | Points                        47 |
+   |                                  |
+   | Goals For                     10 |
+   | Goals Against                 90 |
+   | Goal Ratio                   -80 |
+   |                                  |
+   | Time                      102:45 |
+   | Experience               5857:30 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:1 |
+   | Match 2                      0:0 |
+   | Match 3                      0:1 |
+   | Match 4                      0:1 |
+   | Match 5                      0:1 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       0:0 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:24 |
+   | Points                         2 |
+   | Goal Ratio                     0 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 6
+   Episode 20 of 20 - [##########]
+
+
+   ------------------------------------
+   | Played                       100 |
+   | Won                            1 |
+   | Lost                          65 |
+   | Drawn                         34 |
+   | Points                        37 |
+   |                                  |
+   | Goals For                      3 |
+   | Goals Against                 92 |
+   | Goal Ratio                   -89 |
+   |                                  |
+   | Time                      102:54 |
+   | Experience               6007:30 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:1 |
+   | Match 2                      0:1 |
+   | Match 3                      0:1 |
+   | Match 4                      0:1 |
+   | Match 5                      0:0 |
+   ------------------------------------
+   | Test 1                       1:2 |
+   | Test 2                       0:0 |
+   | Test 3                       3:0 |
+   |                                  |
+   | Time                       01:24 |
+   | Points                         1 |
+   | Goal Ratio                    -1 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 7
+   Episode 20 of 20 - [##########]
+
+
+   ------------------------------------
+   | Played                       100 |
+   | Won                            5 |
+   | Lost                          57 |
+   | Drawn                         38 |
+   | Points                        53 |
+   |                                  |
+   | Goals For                      6 |
+   | Goals Against                 83 |
+   | Goal Ratio                   -77 |
+   |                                  |
+   | Time                      104:51 |
+   | Experience               6157:30 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:1 |
+   | Match 3                      0:0 |
+   | Match 4                      0:2 |
+   | Match 5                      0:1 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       0:1 |
+   | Test 3                       0:2 |
+   |                                  |
+   | Time                       01:25 |
+   | Points                         1 |
+   | Goal Ratio                    -1 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+
+
+
+   Epoch 8
+   Episode 20 of 20 - [##########]
+
+
+   ------------------------------------
+   | Played                       100 |
+   | Won                            1 |
+   | Lost                          64 |
+   | Drawn                         35 |
+   | Points                        38 |
+   |                                  |
+   | Goals For                      1 |
+   | Goals Against                102 |
+   | Goal Ratio                  -101 |
+   |                                  |
+   | Time                      104:58 |
+   | Experience               6307:30 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:2 |
+   | Match 2                      0:1 |
+   | Match 3                      0:2 |
+   | Match 4                      0:1 |
+   | Match 5                      0:0 |
+   ------------------------------------
+   | Test 1                       0:0 |
+   | Test 2                       0:1 |
+   | Test 3                       0:0 |
+   |                                  |
+   | Time                       01:27 |
+   | Points                         1 |
+   | Goal Ratio                    -1 |
+   | Match Clock                00:00 |
+   ------------------------------------
+
+

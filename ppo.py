@@ -2,13 +2,9 @@
 # -*- coding: utf-8 -*-
 
 import os
-import gym
 import time
-import random
 import logging
 import datetime
-import pickle
-import numpy as np
 import gfootball.env as football
 
 from tensorflow.python.util import deprecation
@@ -39,30 +35,32 @@ class Results:
     
     def temps(self, matches):
         
-        self.tempfor = reduce(lambda a, b: a + b[0]["score"][0], matches, 0)
-        self.tempagainst = reduce(lambda a, b: a + b[0]["score"][1], matches, 0)
+        self.tempfor = reduce(lambda a, b: a + b[0]["score"][int(not b[0]["is_left"])], matches, 0)
+        self.tempagainst = reduce(lambda a, b: a + b[0]["score"][int(b[0]["is_left"])], matches, 0)
         self.tempdifference = self.tempfor - self.tempagainst
         
-    def record(self, scored, conceded):
+    def record(self, scores):
         
         self.tempfor = 0
         self.tempagainst = 0
         self.tempdifference = 0
         
-        self.goalsfor += scored
-        self.goalsagainst += conceded
-        self.goaldifference = self.goalsfor - self.goalsagainst
+        for scored, conceded in scores:
         
-        self.matches += 1
-        
-        if scored > conceded:
-            self.won += 1
-            self.points += 3
-        elif scored < conceded:
-            self.lost += 1
-        else:
-            self.drawn += 1
-            self.points += 1
+            self.goalsfor += scored
+            self.goalsagainst += conceded
+            self.goaldifference = self.goalsfor - self.goalsagainst
+            
+            self.matches += 1
+            
+            if scored > conceded:
+                self.won += 1
+                self.points += 3
+            elif scored < conceded:
+                self.lost += 1
+            else:
+                self.drawn += 1
+                self.points += 1
     
     def results(self):
         
@@ -110,40 +108,40 @@ class Agent:
             "enable_sides_swap": False
         }
         
-        config = dict(map(lambda a: (a[0], a[1] if a[0] not in env.keys() else env[a[0]]), self.defaults.items()))
+        self.config = dict(map(lambda a: (a[0], a[1] if a[0] not in env.keys() else env[a[0]]), self.defaults.items()))
         
         self.parallel = parallel
         self.training = SubprocVecEnv([
         
             lambda: football.create_environment(
-                env_name = config["env_name"],
-                representation = config["representation"],
-                rewards = config["rewards"],
-                render = config["render"],
-                write_video = config["write_video"],
-                dump_frequency = config["dump_frequency"],
-                extra_players = config["extra_players"],
-                number_of_left_players_agent_controls = config["number_of_left_players_agent_controls"],
-                number_of_right_players_agent_controls = config["number_of_right_players_agent_controls"],
-                enable_sides_swap = config["enable_sides_swap"]
+                env_name = self.config["env_name"],
+                representation = self.config["representation"],
+                rewards = self.config["rewards"],
+                render = self.config["render"],
+                write_video = self.config["write_video"],
+                dump_frequency = self.config["dump_frequency"],
+                extra_players = self.config["extra_players"],
+                number_of_left_players_agent_controls = self.config["number_of_left_players_agent_controls"],
+                number_of_right_players_agent_controls = self.config["number_of_right_players_agent_controls"],
+                enable_sides_swap = self.config["enable_sides_swap"]
             ) for _ in range(parallel)
         
         ])
         self.testing = SubprocVecEnv([
         
             lambda: football.create_environment(
-                env_name = "11_vs_11_easy_stochastic",
-                representation = "simple115",
-                rewards = config["rewards"],
+                env_name = self.config["env_name"],
+                representation = self.config["representation"],
+                rewards = self.config["rewards"],
                 render = False,
                 # write_video = True,
                 # dump_frequency = 1,
                 # enable_full_episode_videos = False,
                 # logdir = self.path,
-                extra_players = config["extra_players"],
-                number_of_left_players_agent_controls = config["number_of_left_players_agent_controls"],
-                number_of_right_players_agent_controls = config["number_of_right_players_agent_controls"],
-                enable_sides_swap = config["enable_sides_swap"]
+                extra_players = self.config["extra_players"],
+                number_of_left_players_agent_controls = self.config["number_of_left_players_agent_controls"],
+                number_of_right_players_agent_controls = self.config["number_of_right_players_agent_controls"],
+                enable_sides_swap = self.config["enable_sides_swap"]
             ) for _ in range(1)
         
         ])
@@ -212,7 +210,7 @@ class Agent:
 
         self.model.set_env(self.training)
         
-        with output(initial_len = 25, interval = 0) as lines:
+        with output(initial_len = 20 + self.parallel, interval = 0) as lines:
             
             lines[0] = "\n"
             lines[3] = "\n"
@@ -224,9 +222,11 @@ class Agent:
                 matches = self.training.get_attr("last_observation")
                 results.temps(matches)
                 
+                scores = list(map(lambda match: "{}:{}".format(match[0]["score"][int(not match[0]["is_left"])], match[0]["score"][int(match[0]["is_left"])]), matches))
+                
                 update(
                     clock = int((3000 - matches[0][0]["steps_left"]) * 1.8), 
-                    scores = list(map(lambda match: "{}:{}".format(match[0]["score"][0], match[0]["score"][1]), matches))
+                    scores = scores
                 )
             
             def update(*, clock, scores = None):
@@ -255,14 +255,14 @@ class Agent:
                 
                 self.model.learn(total_timesteps = 3000 * self.parallel, callback = callback)
                 
-                for index, match in enumerate(self.training.get_attr("last_observation")):
-                    results.record(scored = match[0]["score"][0], conceded = match[0]["score"][1])
+                scores = list(map(lambda match: (match[0]["score"][int(not match[0]["is_left"])], match[0]["score"][int(match[0]["is_left"])]), self.training.get_attr("last_observation")))
+                
+                results.record(scores = scores)
         
+                update(clock = 5400, scores = list(map(lambda a: "{}:{}".format(a[0], a[1]), scores)))
                 self.experience += self.parallel * 90
-        
-                update(clock = 5400, scores = list(map(lambda match: "{}:{}".format(match[0]["score"][0], match[0]["score"][1]), self.training.get_attr("last_observation"))))
-        
-                time.sleep(10)
+                
+                time.sleep(1)
         
             self.dump(lines)
         
@@ -331,22 +331,47 @@ class Agent:
         
         for epoch in range(1, epochs):
             
-            self.train(epoch = epoch, episodes = episodes, )
-            self.test(tests = tests)
+            self.train(epoch = epoch, episodes = episodes)
+            # self.test(tests = tests)
             
             self.model.save(os.path.join(self.path, self.name.format(epoch)))
+    
+    def watch(self, matches):
         
+        environment = SubprocVecEnv([
+        
+            lambda: football.create_environment(
+                env_name = self.config["env_name"],
+                representation = self.config["representation"],
+                rewards = self.config["rewards"],
+                render = True,
+                extra_players = self.config["extra_players"],
+                number_of_left_players_agent_controls = self.config["number_of_left_players_agent_controls"],
+                number_of_right_players_agent_controls = self.config["number_of_right_players_agent_controls"],
+                enable_sides_swap = self.config["enable_sides_swap"]
+            ) for _ in range(1)
+        
+        ])
+        
+        # state = environment.reset()
+        self.model.set_env(environment)
+        
+        for match in range(matches):
+
+            self.model.learn(total_timesteps = 3000)
 
 agent = Agent(
-    version = "v2",
-    env = {"env_name": "11_vs_11_stochastic", "representation": "simple115", "render": False, "rewards": "scoring,checkpoints", "enable_sides_swap": False},
-    weights = "models/football-ppo-v1/football-ppov1-e34",
-    experience = 306000,
-    parallel = 5,
+    version = "v3",
+    env = {"env_name": "11_vs_11_easy_stochastic", "representation": "simple115", "render": False, "rewards": "scoring,checkpoints,roles", "enable_sides_swap": True},
+    weights = None,#"models/football-ppo-v1/football-ppov1-e34",
+    # experience = 306000,
+    parallel = 10,
     verbose = False
 )
 
 agent.run(epochs = 100, episodes = 20, tests = 3)
+
+# agent.watch(matches = 5)
 
 # agent = Agent(
 #     version = "v1",
