@@ -160,7 +160,7 @@ class Agent:
         if weights == None:
             self.model = PPO2(policy = MlpPolicy, env = self.training, verbose = int(self.verbose))
         else:
-            self.model = PPO2.load(weights)
+            self.model = PPO2.load(weights, env = self.training)
     
         self.experience = experience
     
@@ -319,7 +319,7 @@ class Agent:
 
             self.dump(lines)
                     
-    def run(self, *, epochs, episodes, tests):
+    def run(self, *, epochs, episodes):
         
         if os.path.exists(self.path):
     
@@ -332,11 +332,9 @@ class Agent:
         for epoch in range(1, epochs):
             
             self.train(epoch = epoch, episodes = episodes)
-            # self.test(tests = tests)
-            
             self.model.save(os.path.join(self.path, self.name.format(epoch)))
     
-    def watch(self, matches):
+    def watch(self, matches, weights, render = True):
         
         environment = SubprocVecEnv([
         
@@ -344,7 +342,9 @@ class Agent:
                 env_name = self.config["env_name"],
                 representation = self.config["representation"],
                 rewards = self.config["rewards"],
-                render = True,
+                render = render,
+                write_video = self.config["write_video"],
+                dump_frequency = self.config["dump_frequency"],
                 extra_players = self.config["extra_players"],
                 number_of_left_players_agent_controls = self.config["number_of_left_players_agent_controls"],
                 number_of_right_players_agent_controls = self.config["number_of_right_players_agent_controls"],
@@ -353,25 +353,24 @@ class Agent:
         
         ])
         
-        # state = environment.reset()
-        self.model.set_env(environment)
+        self.model = PPO2.load(weights, env = environment)
         
         for match in range(matches):
 
             self.model.learn(total_timesteps = 3000)
 
 agent = Agent(
-    version = "v3",
-    env = {"env_name": "11_vs_11_easy_stochastic", "representation": "simple115", "render": False, "rewards": "scoring,checkpoints,roles", "enable_sides_swap": True},
-    weights = None,#"models/football-ppo-v1/football-ppov1-e34",
-    # experience = 306000,
+    version = "v7",
+    env = {"env_name": "11_vs_11_easy_stochastic", "representation": "simple115", "render": False, "rewards": "scoring,checkpoints,roles", "enable_sides_swap": False},
+    weights = "models/football-ppo-v1/football-ppov1-e34",
+    experience = 306000,
     parallel = 10,
     verbose = False
 )
 
-agent.run(epochs = 100, episodes = 20, tests = 3)
+agent.run(epochs = 100, episodes = 20)
 
-# agent.watch(matches = 5)
+# agent.watch(matches = 5, weights = "models/football-ppo-v5/football-ppov5-e1", render = True)
 
 # agent = Agent(
 #     version = "v1",
