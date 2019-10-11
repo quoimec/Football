@@ -91,7 +91,7 @@ class Results:
 
 class Agent:
     
-    def __init__(self, version, env, parallel = 1, experience = 0, verbose = False, weights = None):
+    def __init__(self, version, envs, parallel = 1, experience = 0, verbose = False, weights = None):
         
         self.version = version
         self.name = "football-ppo{}".format(version) + "-e{}"
@@ -107,13 +107,15 @@ class Agent:
             "extra_players": None,
             "number_of_left_players_agent_controls": 1,
             "number_of_right_players_agent_controls": 0,
-            "enable_sides_swap": False
+            "enable_sides_swap": False,
+            "parallel": 1
         }
         
-        config = dict(map(lambda a: (a[0], a[1] if a[0] not in env.keys() else env[a[0]]), self.defaults.items()))
+        configs = list(map(lambda b: dict(map(lambda a: (a[0], a[1] if a[0] not in b.keys() else b[a[0]]), self.defaults.items())), envs))
         
-        self.parallel = parallel
-        self.training = SubprocVecEnv([
+        self.parallel = reduce(lambda a, b: a + b["parallel"], filter(lambda c: c["env_name"] in ["11_vs_11_stochastic", "11_vs_11_easy_stochastic", "11_vs_11_hard_stochastic"]), 0)
+        
+        self.training = SubprocVecEnv(reduce(lambda a, b: a + b, list(map(lambda config: [
         
             lambda: football.create_environment(
                 env_name = config["env_name"],
@@ -126,27 +128,9 @@ class Agent:
                 number_of_left_players_agent_controls = config["number_of_left_players_agent_controls"],
                 number_of_right_players_agent_controls = config["number_of_right_players_agent_controls"],
                 enable_sides_swap = config["enable_sides_swap"]
-            ) for _ in range(parallel)
+            ) for _ in range(config["parallel"])
         
-        ])
-        self.testing = SubprocVecEnv([
-        
-            lambda: football.create_environment(
-                env_name = "11_vs_11_easy_stochastic",
-                representation = "simple115",
-                rewards = config["rewards"],
-                render = False,
-                # write_video = True,
-                # dump_frequency = 1,
-                # enable_full_episode_videos = False,
-                # logdir = self.path,
-                extra_players = config["extra_players"],
-                number_of_left_players_agent_controls = config["number_of_left_players_agent_controls"],
-                number_of_right_players_agent_controls = config["number_of_right_players_agent_controls"],
-                enable_sides_swap = config["enable_sides_swap"]
-            ) for _ in range(1)
-        
-        ])
+        ], configs)), []))
         
         self.inputs = self.training.get_attr("observation_space")[0].shape[0]
         self.outputs = self.training.get_attr("action_space")[0].n
@@ -339,11 +323,13 @@ class Agent:
 
 agent = Agent(
     version = "v2",
-    env = {"env_name": "11_vs_11_stochastic", "representation": "simple115", "render": False, "rewards": "scoring,checkpoints", "enable_sides_swap": False},
+    envs = [
+        {"env_name": "11_vs_11_stochastic", "representation": "simple115", "render": False, "rewards": "scoring,roles,checkpoints", "enable_sides_swap": False, "parallel": 2},
+        {"env_name": "academy_pass_and_shoot_with_keeper", "representation": "simple115", "render": False, "rewards": "scoring,fast", "enable_sides_swap": False, "parallel": 2},
+    ],
     weights = "models/football-ppo-v1/football-ppov1-e34",
     experience = 306000,
-    parallel = 5,
-    verbose = False
+    verbose = True
 )
 
 agent.run(epochs = 100, episodes = 20, tests = 3)
