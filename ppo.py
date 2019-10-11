@@ -44,7 +44,7 @@ class Results:
         self.tempfor = 0
         self.tempagainst = 0
         self.tempdifference = 0
-        
+
         for scored, conceded in scores:
         
             self.goalsfor += scored
@@ -79,7 +79,7 @@ class Results:
             ("Goals Against", self.goalsagainst + self.tempagainst),
             ("Goal Ratio", self.goaldifference + self.tempdifference)
         ]
-        
+                
     def testing(self):
         
         return [
@@ -89,7 +89,7 @@ class Results:
 
 class Agent:
     
-    def __init__(self, version, env, parallel = 1, experience = 0, verbose = False, weights = None):
+    def __init__(self, version, env, parallel = 1, hours = 0, verbose = False, weights = None):
         
         self.version = version
         self.name = "football-ppo{}".format(version) + "-e{}"
@@ -162,7 +162,7 @@ class Agent:
         else:
             self.model = PPO2.load(weights, env = self.training)
     
-        self.experience = experience
+        self.experience = hours * 60
     
     def duration(self, time):
         
@@ -200,7 +200,7 @@ class Agent:
         with open(os.path.join(self.path, "results.txt"), "a+") as dump:
             for line in lines: dump.write(line + ("\r\n" if line != "\r\n" else ""))
          
-    def train(self, *, epoch, episodes):
+    def train(self, *, epoch, episodes, verbose):
         
         results = Results()
         
@@ -210,7 +210,9 @@ class Agent:
 
         self.model.set_env(self.training)
         
-        with output(initial_len = 20 + self.parallel, interval = 0) as lines:
+        count = 4 if not verbose else 20 + self.parallel
+        
+        with output(initial_len = count, interval = 0) as lines:
             
             lines[0] = "\n"
             lines[3] = "\n"
@@ -230,6 +232,8 @@ class Agent:
                 )
             
             def update(*, clock, scores = None):
+                
+                if not verbose: return
                 
                 if scores == None:
                     scores = ["0:0"] * self.parallel
@@ -319,7 +323,7 @@ class Agent:
 
             self.dump(lines)
                     
-    def run(self, *, epochs, episodes):
+    def run(self, *, epochs, episodes, verbose = True):
         
         if os.path.exists(self.path):
     
@@ -331,7 +335,7 @@ class Agent:
         
         for epoch in range(1, epochs):
             
-            self.train(epoch = epoch, episodes = episodes)
+            self.train(epoch = epoch, episodes = episodes, verbose = verbose)
             self.model.save(os.path.join(self.path, self.name.format(epoch)))
     
     def watch(self, matches, weights, render = True):
@@ -360,17 +364,19 @@ class Agent:
             self.model.learn(total_timesteps = 3000)
 
 agent = Agent(
-    version = "v7",
-    env = {"env_name": "11_vs_11_easy_stochastic", "representation": "simple115", "render": False, "rewards": "scoring,checkpoints,roles", "enable_sides_swap": False},
-    weights = "models/football-ppo-v1/football-ppov1-e34",
-    experience = 306000,
-    parallel = 10,
+    version = "v13",
+    env = {"env_name": "11_vs_11_stochastic", "representation": "simple115", "render": False, "rewards": "scoring,checkpoints,roles", "enable_sides_swap": False},
+    weights = "models/football-ppo-v12/football-ppov12-e4",
+    hours = 14400,
+    parallel = 20,
     verbose = False
 )
 
-agent.run(epochs = 100, episodes = 20)
+# 
 
-# agent.watch(matches = 5, weights = "models/football-ppo-v5/football-ppov5-e1", render = True)
+agent.run(epochs = 10, episodes = 20)
+
+# agent.watch(matches = 5, weights = "models/football-ppo-v12/football-ppov12-e9", render = True)
 
 # agent = Agent(
 #     version = "v1",
