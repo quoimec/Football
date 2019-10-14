@@ -19,8 +19,11 @@ from reprint import output
 
 class Results:
     
-    def __init__(self):
+    def __init__(self, indexes):
     
+        self.indexes = indexes
+        self.count = sum(self.indexes)
+        
         self.won = 0
         self.lost = 0
         self.drawn = 0
@@ -29,23 +32,36 @@ class Results:
         self.goalsfor = 0
         self.goalsagainst = 0
         self.goaldifference = 0
+        
         self.tempfor = 0
         self.tempagainst = 0
         self.tempdifference = 0
     
+    def filter(self, matches):
+        
+        return list(map(lambda a: a[1], filter(lambda b: self.indexes[b[0]], enumerate(matches))))
+    
+    def scores(self, matches):
+        
+        return list(map(lambda match: (match[0]["score"][int(not match[0]["is_left"])], match[0]["score"][int(match[0]["is_left"])]), self.filter(matches)))
+    
     def temps(self, matches):
+        
+        matches = self.filter(matches)
         
         self.tempfor = reduce(lambda a, b: a + b[0]["score"][int(not b[0]["is_left"])], matches, 0)
         self.tempagainst = reduce(lambda a, b: a + b[0]["score"][int(b[0]["is_left"])], matches, 0)
         self.tempdifference = self.tempfor - self.tempagainst
         
-    def record(self, scores):
+    def record(self, matches):
+        
+        matches = self.filter(matches)
         
         self.tempfor = 0
         self.tempagainst = 0
         self.tempdifference = 0
 
-        for scored, conceded in scores:
+        for scored, conceded in self.scores(matches):
         
             self.goalsfor += scored
             self.goalsagainst += conceded
@@ -109,9 +125,7 @@ class Agent:
             "parallel": 1
         }
         
-        configs = list(map(lambda b: dict(map(lambda a: (a[0], a[1] if a[0] not in b.keys() else b[a[0]]), self.defaults.items())), envs))
-        
-        self.parallel = reduce(lambda a, b: a + b["parallel"], filter(lambda c: c["env_name"] in ["11_vs_11_stochastic", "11_vs_11_easy_stochastic", "11_vs_11_hard_stochastic"]), 0)
+        self.configs = list(map(lambda b: dict(map(lambda a: (a[0], a[1] if a[0] not in b.keys() else b[a[0]]), self.defaults.items())), envs))
         
         self.training = SubprocVecEnv(reduce(lambda a, b: a + b, list(map(lambda config: [
         
@@ -128,7 +142,7 @@ class Agent:
                 enable_sides_swap = config["enable_sides_swap"]
             ) for _ in range(config["parallel"])
         
-        ], configs)), []))
+        ], self.configs)), []))
         
         self.inputs = self.training.get_attr("observation_space")[0].shape[0]
         self.outputs = self.training.get_attr("action_space")[0].n
@@ -186,17 +200,18 @@ class Agent:
          
     def train(self, *, epoch, episodes, verbose):
         
-        results = Results()
-        
+        inset = "   "
         start = datetime.datetime.now()
         
-        inset = "   "
-
-        self.model.set_env(self.training)
+        counts = list(map(lambda a: a["parallel"], self.configs))
+        stochastics = ["11_vs_11_stochastic", "11_vs_11_easy_stochastic", "11_vs_11_hard_stochastic"]
+        expand = lambda values, counts: reduce(lambda a, b: a + b, map(lambda c: [c[0]] * c[1], zip(values, counts)), [])
         
-        count = 4 if not verbose else 20 + self.parallel
+        results = Results(indexes = expand(list(map(lambda a: a["env_name"] in stochastics, self.configs)), counts))
         
-        with output(initial_len = count, interval = 0) as lines:
+        parallel = sum(counts)
+        
+        with output(initial_len = 4 if not verbose else 20 + results.count, interval = 0) as lines:
             
             lines[0] = "\n"
             lines[3] = "\n"
@@ -208,11 +223,9 @@ class Agent:
                 matches = self.training.get_attr("last_observation")
                 results.temps(matches)
                 
-                scores = list(map(lambda match: "{}:{}".format(match[0]["score"][int(not match[0]["is_left"])], match[0]["score"][int(match[0]["is_left"])]), matches))
-                
                 update(
                     clock = int((3000 - matches[0][0]["steps_left"]) * 1.8), 
-                    scores = scores
+                    scores = list(map(lambda score: "{}:{}".format(score[0], score[1]), results.scores(matches)))
                 )
             
             def update(*, clock, scores = None):
@@ -220,13 +233,13 @@ class Agent:
                 if not verbose: return
                 
                 if scores == None:
-                    scores = ["0:0"] * self.parallel
+                    scores = ["0:0"] * results.count
                 
-                matches = list(map(lambda a: "Match {}".format(a), range(1, self.parallel + 1)))
+                matches = list(map(lambda a: "Match {}".format(a), range(1, results.count + 1)))
                 
                 table = reduce(lambda a, b: a + b, [
                     self.separator(),
-                    self.section(values = (results.results() + self.blank() + results.goals() + self.blank() + [("Time", self.duration((datetime.datetime.now() - start).seconds)), ("Experience", self.duration(self.experience + int((clock / 60) * self.parallel))), ("Match Clock", self.duration(clock))])),
+                    self.section(values = (results.results() + self.blank() + results.goals() + self.blank() + [("Time", self.duration((datetime.datetime.now() - start).seconds)), ("Experience", self.duration(self.experience + int((clock / 60) * parallel))), ("Match Clock", self.duration(clock))])),
                     self.separator(),
                     self.section(values = list(zip(matches, scores))),
                     self.separator()
@@ -241,72 +254,43 @@ class Agent:
                 
                 update(clock = 0)
                 
-                self.model.learn(total_timesteps = 3000 * self.parallel, callback = callback)
+                self.model.learn(total_timesteps = 3000 * parallel, callback = callback)
                 
-                scores = list(map(lambda match: (match[0]["score"][int(not match[0]["is_left"])], match[0]["score"][int(match[0]["is_left"])]), self.training.get_attr("last_observation")))
-                
-                results.record(scores = scores)
+                matches = self.training.get_attr("last_observation")
+                results.record(matches = matches)
         
-                update(clock = 5400, scores = list(map(lambda a: "{}:{}".format(a[0], a[1]), scores)))
-                self.experience += self.parallel * 90
+                update(clock = 5400, scores = list(map(lambda a: "{}:{}".format(a[0], a[1]), results.scores(matches))))
+                self.experience += parallel * 90
                 
                 time.sleep(1)
         
             self.dump(lines)
+    
+    def watch(self, matches, weights, render = True):
         
-    def test(self, *, tests):
+        environment = SubprocVecEnv([
         
-        self.model.set_env(self.testing)
+            lambda: football.create_environment(
+                env_name = self.configs[0]["env_name"],
+                representation = self.configs[0]["representation"],
+                rewards = self.configs[0]["rewards"],
+                render = render,
+                write_video = self.configs[0]["write_video"],
+                dump_frequency = self.configs[0]["dump_frequency"],
+                extra_players = self.configs[0]["extra_players"],
+                number_of_left_players_agent_controls = self.configs[0]["number_of_left_players_agent_controls"],
+                number_of_right_players_agent_controls = self.configs[0]["number_of_right_players_agent_controls"],
+                enable_sides_swap = self.configs[0]["enable_sides_swap"]
+            ) for _ in range(1)
+        
+        ])
+        
+        self.model = PPO2.load(weights, env = environment)
+        
+        for match in range(matches):
 
-        results = Results()
+            self.model.learn(total_timesteps = 3000)
 
-        start = datetime.datetime.now()
-
-        matches = list(map(lambda a: ("Test {}".format(a), "-"), range(1, tests + 1)))
-
-        with output(initial_len = 7 + tests, interval = 0) as lines:
-
-            lines[-1] = "\n"
-            lines[-2] = "\n"
-
-            def update(*, clock):
-
-                table = table = reduce(lambda a, b: a + b, [
-                    self.section(values = (matches + self.blank() + [("Time", self.duration((datetime.datetime.now() - start).seconds))] + results.testing() + [("Match Clock", self.duration(clock))])),
-                    self.separator()
-                ], [])
-                
-                for index, row in enumerate(table): 
-                    lines[index] = row
-
-            for test in range(tests):
-
-                done = False
-                score = [0, 0]
-                state = self.testing.reset()
-
-                while not done:
-
-                    action, futures = self.model.predict(state)
-                    state, reward, dones, info = self.testing.step(action)
-                    
-                    done = dones[0]
-                    
-                    match = self.testing.get_attr("last_observation")
-                    
-                    if not done:
-                        score = match[0][0]["score"]
-                        matches[test] = (matches[test][0], "{}:{}".format(score[0], score[1]))
-                    
-                    clock = int((3000 - match[0][0]["steps_left"]) * 1.8)
-                    
-                    if clock % 15 == 0:
-                        update(clock = clock)
-
-                results.record(scored = score[0], conceded = score[1])
-
-            self.dump(lines)
-                    
     def run(self, *, epochs, episodes, verbose = True):
         
         if os.path.exists(self.path):
@@ -321,48 +305,24 @@ class Agent:
             
             self.train(epoch = epoch, episodes = episodes, verbose = verbose)
             self.model.save(os.path.join(self.path, self.name.format(epoch)))
-    
-    def watch(self, matches, weights, render = True):
-        
-        environment = SubprocVecEnv([
-        
-            lambda: football.create_environment(
-                env_name = self.config["env_name"],
-                representation = self.config["representation"],
-                rewards = self.config["rewards"],
-                render = render,
-                write_video = self.config["write_video"],
-                dump_frequency = self.config["dump_frequency"],
-                extra_players = self.config["extra_players"],
-                number_of_left_players_agent_controls = self.config["number_of_left_players_agent_controls"],
-                number_of_right_players_agent_controls = self.config["number_of_right_players_agent_controls"],
-                enable_sides_swap = self.config["enable_sides_swap"]
-            ) for _ in range(1)
-        
-        ])
-        
-        self.model = PPO2.load(weights, env = environment)
-        
-        for match in range(matches):
-
-            self.model.learn(total_timesteps = 3000)
+            # self.watch(matches = 1, weights = os.path.join(self.path, self.name.format(epoch)), render = True)
 
 agent = Agent(
-    version = "v14",
+    version = "v18",
     envs = [
-        {"env_name": "11_vs_11_stochastic", "representation": "simple115", "render": False, "rewards": "scoring,roles,checkpoints", "enable_sides_swap": False, "parallel": 2},
-        {"env_name": "academy_pass_and_shoot_with_keeper", "representation": "simple115", "render": False, "rewards": "scoring,fast", "enable_sides_swap": False, "parallel": 2},
+        {"env_name": "11_vs_11_stochastic", "representation": "simple115", "render": False, "rewards": "scoring,roles,checkpoints", "enable_sides_swap": False, "parallel": 10},
+        {"env_name": "academy_counterattack_hard", "representation": "simple115", "render": False, "rewards": "scoring,roles,checkpoints", "enable_sides_swap": False, "parallel": 2}
     ],
-    weights = "models/football-ppo-v12/football-ppov12-e4",
-    experience = 14400,
-    verbose = True
+    weights = "models/football-ppo-v11/football-ppov11-e23",
+    hours = 14400,
+    verbose = False
 )
 
 # 
 
-agent.run(epochs = 10, episodes = 20)
+agent.run(epochs = 100, episodes = 20, verbose = True)
 
-# agent.watch(matches = 5, weights = "models/football-ppo-v12/football-ppov12-e9", render = True)
+# agent.watch(matches = 5, weights = "models/football-ppo-v11/football-ppov11-e23", render = True)
 
 # agent = Agent(
 #     version = "v1",
