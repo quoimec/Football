@@ -1,0 +1,185 @@
+charlie@Parsley:~/Projects/Python/Football$ python3
+Python 3.6.8 (default, Aug 20 2019, 17:12:48) 
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import pandas as pd
+>>> data = pd.read_json("models/football-ppo-v7/rewards.json", orient = "records")
+>>> data[0:10]
+                                             rewards
+0  {'BaseReward': 0.0, 'KeeperPosition': -0.00273...
+1  {'BaseReward': 0.0, 'KeeperPosition': -0.00238...
+2  {'BaseReward': 0.0, 'KeeperPosition': -0.00265...
+3  {'BaseReward': 0.0, 'KeeperPosition': -0.00524...
+4  {'BaseReward': 1.0, 'KeeperPosition': -0.00612...
+5  {'BaseReward': 0.0, 'KeeperPosition': -0.00361...
+6  {'BaseReward': 1.0, 'KeeperPosition': -0.00472...
+7  {'BaseReward': 1.0, 'KeeperPosition': -0.00433...
+8  {'BaseReward': 0.0, 'KeeperPosition': -0.00360...
+9  {'BaseReward': 0.0, 'KeeperPosition': -0.00735...
+>>> data = pd.read_json("models/football-ppo-v7/rewards.json", orient = "records")
+>>> data
+      BaseReward  KeeperPosition  KeeperPositionScored  ...  ShotReward  GoalsFor  GoalsAgainst
+0              0       -0.002740                   0.0  ...    0.000189         0             0
+1              0       -0.002382                   0.0  ...    0.000264         0             0
+2              0       -0.002652                   0.0  ...    0.000533         0             0
+3              0       -0.005242                   0.0  ...    0.000000         0             0
+4              1       -0.006128                   0.0  ...    0.000184         2             1
+...          ...             ...                   ...  ...         ...       ...           ...
+2595           0       -0.005498                   0.0  ...    0.000000         0             0
+2596           0       -0.005456                   0.0  ...    0.000337         0             0
+2597           0       -0.005426                   0.0  ...    0.000000         0             0
+2598           2       -0.005623                   0.0  ...    0.000284         2             0
+2599           0       -0.007046                   0.0  ...    0.000124         0             0
+
+[2600 rows x 10 columns]
+>>> data
+      BaseReward  KeeperPosition  KeeperPositionScored  BisectedPasses  ForwardPasses  InterceptedPasses  ChainedPassesScored  ShotReward  GoalsFor  GoalsAgainst
+0              0       -0.002740                   0.0             0.0       0.000082            -0.0002                  0.0    0.000189         0             0
+1              0       -0.002382                   0.0             0.0       0.000103            -0.0002                  0.0    0.000264         0             0
+2              0       -0.002652                   0.0             0.0       0.000057            -0.0006                  0.0    0.000533         0             0
+3              0       -0.005242                   0.0             0.0       0.000000             0.0000                  0.0    0.000000         0             0
+4              1       -0.006128                   0.0             0.0       0.000000            -0.0002                  0.0    0.000184         2             1
+...          ...             ...                   ...             ...            ...                ...                  ...         ...       ...           ...
+2595           0       -0.005498                   0.0             0.0       0.000000            -0.0006                  0.0    0.000000         0             0
+2596           0       -0.005456                   0.0             0.0       0.000232            -0.0004                  0.0    0.000337         0             0
+2597           0       -0.005426                   0.0             0.0       0.000000             0.0000                  0.0    0.000000         0             0
+2598           2       -0.005623                   0.0             0.0       0.000000             0.0000                  0.0    0.000284         2             0
+2599           0       -0.007046                   0.0             0.0       0.000100            -0.0004                  0.0    0.000124         0             0
+
+[2600 rows x 10 columns]
+>>> data["ChainedPassesScored"].min()
+0.0
+>>> data["ChainedPassesScored"].max()
+0.4
+>>> data["BisectedPasses"].max()
+0.0016098728640550001
+>>> data["BisectedPasses"].mean()
+3.585846198910859e-05
+>>> data.describe()
+        BaseReward  KeeperPosition  KeeperPositionScored  BisectedPasses  ForwardPasses  InterceptedPasses  ChainedPassesScored   ShotReward     GoalsFor  GoalsAgainst
+count  2600.000000     2600.000000           2600.000000     2600.000000    2600.000000        2600.000000          2600.000000  2600.000000  2600.000000   2600.000000
+mean      0.168846       -0.005504             -0.024222        0.000036       0.000099          -0.000439             0.001615     0.000082     0.478846      0.310000
+std       0.909713        0.001481              0.931326        0.000140       0.000192           0.000428             0.014590     0.000192     0.716656      0.551377
+min      -5.000000       -0.010735            -46.873907        0.000000       0.000000          -0.002400             0.000000     0.000000     0.000000      0.000000
+25%       0.000000       -0.006436              0.000000        0.000000       0.000000          -0.000600             0.000000     0.000000     0.000000      0.000000
+50%       0.000000       -0.005444              0.000000        0.000000       0.000000          -0.000400             0.000000     0.000000     0.000000      0.000000
+75%       1.000000       -0.004489              0.000000        0.000000       0.000127           0.000000             0.000000     0.000140     1.000000      1.000000
+max       5.000000       -0.001403              0.000000        0.001610       0.001929           0.000000             0.400000     0.003414     5.000000      5.000000
+>>> data[data["KeeperPositionScored" > 0.0]]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: '>' not supported between instances of 'str' and 'float'
+>>> data[data["KeeperPositionScored"] > 0.0]
+Empty DataFrame
+Columns: [BaseReward, KeeperPosition, KeeperPositionScored, BisectedPasses, ForwardPasses, InterceptedPasses, ChainedPassesScored, ShotReward, GoalsFor, GoalsAgainst]
+Index: []
+>>> data[data["KeeperPositionScored"] == 0.0]
+      BaseReward  KeeperPosition  KeeperPositionScored  BisectedPasses  ForwardPasses  InterceptedPasses  ChainedPassesScored  ShotReward  GoalsFor  GoalsAgainst
+0              0       -0.002740                   0.0             0.0       0.000082            -0.0002                  0.0    0.000189         0             0
+1              0       -0.002382                   0.0             0.0       0.000103            -0.0002                  0.0    0.000264         0             0
+2              0       -0.002652                   0.0             0.0       0.000057            -0.0006                  0.0    0.000533         0             0
+3              0       -0.005242                   0.0             0.0       0.000000             0.0000                  0.0    0.000000         0             0
+4              1       -0.006128                   0.0             0.0       0.000000            -0.0002                  0.0    0.000184         2             1
+...          ...             ...                   ...             ...            ...                ...                  ...         ...       ...           ...
+2595           0       -0.005498                   0.0             0.0       0.000000            -0.0006                  0.0    0.000000         0             0
+2596           0       -0.005456                   0.0             0.0       0.000232            -0.0004                  0.0    0.000337         0             0
+2597           0       -0.005426                   0.0             0.0       0.000000             0.0000                  0.0    0.000000         0             0
+2598           2       -0.005623                   0.0             0.0       0.000000             0.0000                  0.0    0.000284         2             0
+2599           0       -0.007046                   0.0             0.0       0.000100            -0.0004                  0.0    0.000124         0             0
+
+[2577 rows x 10 columns]
+>>> data[data["KeeperPositionScored"] < 0.0]
+      BaseReward  KeeperPosition  KeeperPositionScored  BisectedPasses  ForwardPasses  InterceptedPasses  ChainedPassesScored  ShotReward  GoalsFor  GoalsAgainst
+177            0       -0.007554         -6.243754e-02         0.00000       0.000000            -0.0006                  0.0    0.000000         1             1
+216           -2       -0.006254         -8.198467e-01         0.00000       0.000000            -0.0002                  0.0    0.000000         0             2
+584            0       -0.001589         -4.609914e-02         0.00000       0.000000            -0.0002                  0.0    0.000000         2             2
+599            0       -0.005225         -9.968119e-04         0.00000       0.000000            -0.0002                  0.0    0.000000         1             1
+653           -1       -0.006183         -3.304763e-07         0.00000       0.000000            -0.0004                  0.0    0.000000         0             1
+695           -1       -0.006109         -9.986038e-01         0.00000       0.000000             0.0000                  0.0    0.000000         0             1
+1248          -1       -0.004998         -5.998922e-01         0.00000       0.000000             0.0000                  0.0    0.000000         0             1
+1377          -1       -0.005774         -3.391484e-01         0.00000       0.000000            -0.0002                  0.0    0.000000         0             1
+1469           0       -0.005694         -5.677443e+00         0.00000       0.000000             0.0000                  0.0    0.000092         1             1
+1552          -1       -0.005441         -5.235766e-02         0.00000       0.000000            -0.0002                  0.0    0.000000         1             2
+1618           0       -0.005449         -2.086963e-04         0.00000       0.000000            -0.0004                  0.0    0.000000         1             1
+1656          -1       -0.005816         -7.626069e-04         0.00000       0.000000            -0.0006                  0.0    0.000000         0             1
+1720           0       -0.006642         -1.778217e-01         0.00036       0.000295            -0.0012                  0.0    0.000000         1             1
+1845          -1       -0.005208         -1.239187e+00         0.00000       0.000000            -0.0004                  0.0    0.000000         0             1
+1926           0       -0.004889         -7.351039e-01         0.00000       0.000000            -0.0002                  0.0    0.000000         2             2
+2002          -1       -0.005066         -1.869188e-01         0.00000       0.000069            -0.0004                  0.0    0.000000         0             1
+2041          -1       -0.007312         -4.687391e+01         0.00000       0.000106            -0.0012                  0.0    0.000000         0             1
+2113          -2       -0.010053         -7.582405e-03         0.00000       0.000000            -0.0004                  0.0    0.000000         0             2
+2159          -1       -0.006333         -5.587224e-02         0.00000       0.000817            -0.0006                  0.0    0.000201         0             1
+2244          -1       -0.004430         -1.138621e-01         0.00000       0.000000             0.0000                  0.0    0.000194         1             2
+2500          -1       -0.001896         -1.617396e-01         0.00000       0.000058            -0.0004                  0.0    0.000000         0             1
+2540           0       -0.003485         -1.290260e-01         0.00000       0.000000            -0.0012                  0.0    0.000405         1             1
+2564          -1       -0.004486         -4.697330e+00         0.00000       0.000212            -0.0008                  0.0    0.000000         0             1
+>>> data[data["KeeperPositionScored"] < 0.0].count()
+BaseReward              23
+KeeperPosition          23
+KeeperPositionScored    23
+BisectedPasses          23
+ForwardPasses           23
+InterceptedPasses       23
+ChainedPassesScored     23
+ShotReward              23
+GoalsFor                23
+GoalsAgainst            23
+dtype: int64
+>>> data[data["KeeperPositionScored"] < 0.0]["KeeperPositionScored"]
+177    -6.243754e-02
+216    -8.198467e-01
+584    -4.609914e-02
+599    -9.968119e-04
+653    -3.304763e-07
+695    -9.986038e-01
+1248   -5.998922e-01
+1377   -3.391484e-01
+1469   -5.677443e+00
+1552   -5.235766e-02
+1618   -2.086963e-04
+1656   -7.626069e-04
+1720   -1.778217e-01
+1845   -1.239187e+00
+1926   -7.351039e-01
+2002   -1.869188e-01
+2041   -4.687391e+01
+2113   -7.582405e-03
+2159   -5.587224e-02
+2244   -1.138621e-01
+2500   -1.617396e-01
+2540   -1.290260e-01
+2564   -4.697330e+00
+Name: KeeperPositionScored, dtype: float64
+>>> data[data["KeeperPositionScored"] < 0.0]["KeeperPositionScored"].min()
+-46.873907383791156
+>>> list(data[data["KeeperPositionScored"] < 0.0]["KeeperPositionScored"])
+[-0.062437541722994004, -0.819846727356874, -0.046099144614611, -0.000996811900245, -3.304762992999258e-07, -0.998603837995729, -0.599892219861466, -0.339148413458484, -5.677442557564832, -0.052357662903297006, -0.00020869627478800002, -0.000762606893233, -0.17782165882641301, -1.23918689242213, -0.7351038924587431, -0.18691884087621802, -46.873907383791156, -0.007582405449427, -0.055872235446822, -0.11386207632318301, -0.16173956516884, -0.129025982582285, -4.697330062906125]
+>>> sorted(list(data[data["KeeperPositionScored"] < 0.0]["KeeperPositionScored"]))
+[-46.873907383791156, -5.677442557564832, -4.697330062906125, -1.23918689242213, -0.998603837995729, -0.819846727356874, -0.7351038924587431, -0.599892219861466, -0.339148413458484, -0.18691884087621802, -0.17782165882641301, -0.16173956516884, -0.129025982582285, -0.11386207632318301, -0.062437541722994004, -0.055872235446822, -0.052357662903297006, -0.046099144614611, -0.007582405449427, -0.000996811900245, -0.000762606893233, -0.00020869627478800002, -3.304762992999258e-07]
+>>> data[data["KeeperPositionScored"] > -10.0].mean()
+BaseReward              0.169296
+KeeperPosition         -0.005503
+KeeperPositionScored   -0.006196
+BisectedPasses          0.000036
+ForwardPasses           0.000099
+InterceptedPasses      -0.000439
+ChainedPassesScored     0.001616
+ShotReward              0.000082
+GoalsFor                0.479030
+GoalsAgainst            0.309735
+dtype: float64
+>>> data[data["KeeperPosition"] < 0.0].count()
+BaseReward              2600
+KeeperPosition          2600
+KeeperPositionScored    2600
+BisectedPasses          2600
+ForwardPasses           2600
+InterceptedPasses       2600
+ChainedPassesScored     2600
+ShotReward              2600
+GoalsFor                2600
+GoalsAgainst            2600
+dtype: int64
+>>> 0/60
+0.0
+>>> 

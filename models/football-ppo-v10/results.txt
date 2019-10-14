@@ -1,0 +1,544 @@
+
+
+   Epoch 1
+   Episode 20 of 20 - [##########]
+
+
+   ------------------------------------
+   | Played                       200 |
+   | Won                           34 |
+   | Lost                          91 |
+   | Drawn                         75 |
+   | Points                       177 |
+   |                                  |
+   | Goals For                     61 |
+   | Goals Against                146 |
+   | Goal Ratio                   -85 |
+   |                                  |
+   | Time                       32:04 |
+   | Experience              16800:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:0 |
+   | Match 3                      1:1 |
+   | Match 4                      0:0 |
+   | Match 5                      0:0 |
+   | Match 6                      0:0 |
+   | Match 7                      0:2 |
+   | Match 8                      0:3 |
+   | Match 9                      0:0 |
+   | Match 10                     0:1 |
+   ------------------------------------
+
+
+   Epoch 2
+   Episode 20 of 20 - [##########]
+
+
+   ------------------------------------
+   | Played                       200 |
+   | Won                           23 |
+   | Lost                          84 |
+   | Drawn                         93 |
+   | Points                       162 |
+   |                                  |
+   | Goals For                     49 |
+   | Goals Against                133 |
+   | Goal Ratio                   -84 |
+   |                                  |
+   | Time                       32:39 |
+   | Experience              17100:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:1 |
+   | Match 3                      0:2 |
+   | Match 4                      0:2 |
+   | Match 5                      0:1 |
+   | Match 6                      0:1 |
+   | Match 7                      0:0 |
+   | Match 8                      1:2 |
+   | Match 9                      0:0 |
+   | Match 10                     0:0 |
+   ------------------------------------
+
+
+   Epoch 3
+   Episode 20 of 20 - [##########]
+
+
+   ------------------------------------
+   | Played                       200 |
+   | Won                           13 |
+   | Lost                          95 |
+   | Drawn                         92 |
+   | Points                       131 |
+   |                                  |
+   | Goals For                     32 |
+   | Goals Against                147 |
+   | Goal Ratio                  -115 |
+   |                                  |
+   | Time                       32:36 |
+   | Experience              17400:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      1:0 |
+   | Match 2                      1:0 |
+   | Match 3                      0:1 |
+   | Match 4                      0:3 |
+   | Match 5                      0:1 |
+   | Match 6                      0:0 |
+   | Match 7                      0:3 |
+   | Match 8                      1:1 |
+   | Match 9                      0:1 |
+   | Match 10                     0:2 |
+   ------------------------------------
+
+
+   Epoch 4
+   Episode 20 of 20 - [##########]
+
+
+   ------------------------------------
+   | Played                       200 |
+   | Won                           33 |
+   | Lost                          83 |
+   | Drawn                         84 |
+   | Points                       183 |
+   |                                  |
+   | Goals For                     73 |
+   | Goals Against                142 |
+   | Goal Ratio                   -69 |
+   |                                  |
+   | Time                       32:24 |
+   | Experience              17700:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:1 |
+   | Match 3                      0:1 |
+   | Match 4                      0:1 |
+   | Match 5                      0:2 |
+   | Match 6                      0:1 |
+   | Match 7                      0:1 |
+   | Match 8                      0:3 |
+   | Match 9                      0:0 |
+   | Match 10                     1:1 |
+   ------------------------------------
+
+
+   Epoch 5
+   Episode 20 of 20 - [##########]
+
+
+   ------------------------------------
+   | Played                       200 |
+   | Won                           18 |
+   | Lost                          87 |
+   | Drawn                         95 |
+   | Points                       149 |
+   |                                  |
+   | Goals For                     51 |
+   | Goals Against                158 |
+   | Goal Ratio                  -107 |
+   |                                  |
+   | Time                       33:06 |
+   | Experience              18000:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:2 |
+   | Match 3                      1:1 |
+   | Match 4                      0:0 |
+   | Match 5                      0:0 |
+   | Match 6                      0:2 |
+   | Match 7                      0:1 |
+   | Match 8                      1:1 |
+   | Match 9                      0:0 |
+   | Match 10                     0:0 |
+   ------------------------------------
+
+
+   Epoch 6
+   Episode 20 of 20 - [##########]
+
+
+   ------------------------------------
+   | Played                       200 |
+   | Won                           19 |
+   | Lost                          90 |
+   | Drawn                         91 |
+   | Points                       148 |
+   |                                  |
+   | Goals For                     34 |
+   | Goals Against                140 |
+   | Goal Ratio                  -106 |
+   |                                  |
+   | Time                       33:20 |
+   | Experience              18300:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:1 |
+   | Match 3                      0:1 |
+   | Match 4                      0:1 |
+   | Match 5                      1:0 |
+   | Match 6                      0:1 |
+   | Match 7                      0:1 |
+   | Match 8                      0:0 |
+   | Match 9                      0:0 |
+   | Match 10                     0:1 |
+   ------------------------------------
+
+
+   Epoch 7
+   Episode 20 of 20 - [##########]
+
+
+   ------------------------------------
+   | Played                       200 |
+   | Won                           17 |
+   | Lost                          88 |
+   | Drawn                         95 |
+   | Points                       146 |
+   |                                  |
+   | Goals For                     35 |
+   | Goals Against                130 |
+   | Goal Ratio                   -95 |
+   |                                  |
+   | Time                       33:09 |
+   | Experience              18600:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:1 |
+   | Match 2                      0:1 |
+   | Match 3                      0:0 |
+   | Match 4                      0:1 |
+   | Match 5                      0:1 |
+   | Match 6                      0:1 |
+   | Match 7                      0:0 |
+   | Match 8                      1:1 |
+   | Match 9                      0:0 |
+   | Match 10                     0:0 |
+   ------------------------------------
+
+
+   Epoch 8
+   Episode 20 of 20 - [##########]
+
+
+   ------------------------------------
+   | Played                       200 |
+   | Won                           18 |
+   | Lost                          83 |
+   | Drawn                         99 |
+   | Points                       153 |
+   |                                  |
+   | Goals For                     33 |
+   | Goals Against                132 |
+   | Goal Ratio                   -99 |
+   |                                  |
+   | Time                       33:11 |
+   | Experience              18900:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:1 |
+   | Match 2                      0:0 |
+   | Match 3                      0:0 |
+   | Match 4                      0:1 |
+   | Match 5                      1:0 |
+   | Match 6                      1:0 |
+   | Match 7                      1:1 |
+   | Match 8                      0:0 |
+   | Match 9                      0:0 |
+   | Match 10                     0:0 |
+   ------------------------------------
+
+
+   Epoch 9
+   Episode 20 of 20 - [##########]
+
+
+   ------------------------------------
+   | Played                       200 |
+   | Won                           23 |
+   | Lost                          82 |
+   | Drawn                         95 |
+   | Points                       164 |
+   |                                  |
+   | Goals For                     50 |
+   | Goals Against                130 |
+   | Goal Ratio                   -80 |
+   |                                  |
+   | Time                       32:58 |
+   | Experience              19200:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      1:1 |
+   | Match 2                      0:0 |
+   | Match 3                      0:1 |
+   | Match 4                      0:0 |
+   | Match 5                      0:1 |
+   | Match 6                      0:0 |
+   | Match 7                      0:2 |
+   | Match 8                      0:1 |
+   | Match 9                      2:2 |
+   | Match 10                     1:1 |
+   ------------------------------------
+
+
+   Epoch 10
+   Episode 20 of 20 - [##########]
+
+
+   ------------------------------------
+   | Played                       200 |
+   | Won                           26 |
+   | Lost                          86 |
+   | Drawn                         88 |
+   | Points                       166 |
+   |                                  |
+   | Goals For                     45 |
+   | Goals Against                126 |
+   | Goal Ratio                   -81 |
+   |                                  |
+   | Time                       33:04 |
+   | Experience              19500:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:1 |
+   | Match 2                      0:1 |
+   | Match 3                      0:3 |
+   | Match 4                      0:2 |
+   | Match 5                      0:1 |
+   | Match 6                      0:0 |
+   | Match 7                      0:1 |
+   | Match 8                      0:2 |
+   | Match 9                      0:1 |
+   | Match 10                     0:1 |
+   ------------------------------------
+
+
+   Epoch 11
+   Episode 20 of 20 - [##########]
+
+
+   ------------------------------------
+   | Played                       200 |
+   | Won                           16 |
+   | Lost                          92 |
+   | Drawn                         92 |
+   | Points                       140 |
+   |                                  |
+   | Goals For                     41 |
+   | Goals Against                150 |
+   | Goal Ratio                  -109 |
+   |                                  |
+   | Time                       32:52 |
+   | Experience              19800:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:1 |
+   | Match 2                      0:0 |
+   | Match 3                      0:1 |
+   | Match 4                      0:0 |
+   | Match 5                      0:2 |
+   | Match 6                      0:1 |
+   | Match 7                      1:0 |
+   | Match 8                      0:0 |
+   | Match 9                      0:0 |
+   | Match 10                     0:0 |
+   ------------------------------------
+
+
+   Epoch 12
+   Episode 20 of 20 - [##########]
+
+
+   ------------------------------------
+   | Played                       200 |
+   | Won                           21 |
+   | Lost                          98 |
+   | Drawn                         81 |
+   | Points                       144 |
+   |                                  |
+   | Goals For                     32 |
+   | Goals Against                142 |
+   | Goal Ratio                  -110 |
+   |                                  |
+   | Time                       32:46 |
+   | Experience              20100:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:1 |
+   | Match 2                      0:0 |
+   | Match 3                      0:0 |
+   | Match 4                      0:0 |
+   | Match 5                      1:0 |
+   | Match 6                      0:0 |
+   | Match 7                      0:1 |
+   | Match 8                      0:1 |
+   | Match 9                      0:2 |
+   | Match 10                     0:2 |
+   ------------------------------------
+
+
+   Epoch 13
+   Episode 20 of 20 - [##########]
+
+
+   ------------------------------------
+   | Played                       200 |
+   | Won                            9 |
+   | Lost                          90 |
+   | Drawn                        101 |
+   | Points                       128 |
+   |                                  |
+   | Goals For                     23 |
+   | Goals Against                132 |
+   | Goal Ratio                  -109 |
+   |                                  |
+   | Time                       33:06 |
+   | Experience              20400:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:1 |
+   | Match 2                      0:0 |
+   | Match 3                      0:1 |
+   | Match 4                      0:1 |
+   | Match 5                      0:2 |
+   | Match 6                      0:2 |
+   | Match 7                      1:0 |
+   | Match 8                      0:1 |
+   | Match 9                      0:0 |
+   | Match 10                     0:0 |
+   ------------------------------------
+
+
+   Epoch 14
+   Episode 20 of 20 - [##########]
+
+
+   ------------------------------------
+   | Played                       200 |
+   | Won                           13 |
+   | Lost                          94 |
+   | Drawn                         93 |
+   | Points                       132 |
+   |                                  |
+   | Goals For                     24 |
+   | Goals Against                136 |
+   | Goal Ratio                  -112 |
+   |                                  |
+   | Time                       33:09 |
+   | Experience              20700:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:2 |
+   | Match 2                      0:1 |
+   | Match 3                      0:1 |
+   | Match 4                      0:0 |
+   | Match 5                      0:0 |
+   | Match 6                      0:1 |
+   | Match 7                      1:1 |
+   | Match 8                      0:0 |
+   | Match 9                      0:0 |
+   | Match 10                     0:1 |
+   ------------------------------------
+
+
+   Epoch 15
+   Episode 20 of 20 - [##########]
+
+
+   ------------------------------------
+   | Played                       200 |
+   | Won                           12 |
+   | Lost                          78 |
+   | Drawn                        110 |
+   | Points                       146 |
+   |                                  |
+   | Goals For                     34 |
+   | Goals Against                133 |
+   | Goal Ratio                   -99 |
+   |                                  |
+   | Time                       32:37 |
+   | Experience              21000:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:1 |
+   | Match 3                      1:1 |
+   | Match 4                      0:2 |
+   | Match 5                      1:1 |
+   | Match 6                      1:2 |
+   | Match 7                      0:1 |
+   | Match 8                      0:1 |
+   | Match 9                      0:1 |
+   | Match 10                     0:2 |
+   ------------------------------------
+
+
+   Epoch 16
+   Episode 20 of 20 - [##########]
+
+
+   ------------------------------------
+   | Played                       200 |
+   | Won                           24 |
+   | Lost                          82 |
+   | Drawn                         94 |
+   | Points                       166 |
+   |                                  |
+   | Goals For                     65 |
+   | Goals Against                139 |
+   | Goal Ratio                   -74 |
+   |                                  |
+   | Time                       33:09 |
+   | Experience              21300:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:1 |
+   | Match 3                      0:1 |
+   | Match 4                      0:2 |
+   | Match 5                      0:0 |
+   | Match 6                      1:0 |
+   | Match 7                      0:3 |
+   | Match 8                      1:1 |
+   | Match 9                      0:1 |
+   | Match 10                     0:0 |
+   ------------------------------------
+
+
+   Epoch 17
+   Episode 20 of 20 - [##########]
+
+
+   ------------------------------------
+   | Played                       200 |
+   | Won                           22 |
+   | Lost                          91 |
+   | Drawn                         87 |
+   | Points                       153 |
+   |                                  |
+   | Goals For                     46 |
+   | Goals Against                152 |
+   | Goal Ratio                  -106 |
+   |                                  |
+   | Time                       32:56 |
+   | Experience              21600:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      1:1 |
+   | Match 2                      0:0 |
+   | Match 3                      0:0 |
+   | Match 4                      0:1 |
+   | Match 5                      0:1 |
+   | Match 6                      0:1 |
+   | Match 7                      0:2 |
+   | Match 8                      0:1 |
+   | Match 9                      0:0 |
+   | Match 10                     0:1 |
+   ------------------------------------

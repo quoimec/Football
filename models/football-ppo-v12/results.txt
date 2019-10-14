@@ -1,0 +1,54 @@
+
+
+   Epoch 1
+   Episode 20 of 20 - [##########]
+
+
+
+
+   Epoch 2
+   Episode 20 of 20 - [##########]
+
+
+
+
+   Epoch 3
+   Episode 20 of 20 - [##########]
+
+
+
+
+   Epoch 4
+   Episode 20 of 20 - [##########]
+
+
+
+
+   Epoch 5
+   Episode 20 of 20 - [##########]
+
+
+
+
+   Epoch 6
+   Episode 20 of 20 - [##########]
+
+
+
+
+   Epoch 7
+   Episode 20 of 20 - [##########]
+
+
+
+
+   Epoch 8
+   Episode 20 of 20 - [##########]
+
+
+
+
+   Epoch 9
+   Episode 20 of 20 - [##########]
+
+
