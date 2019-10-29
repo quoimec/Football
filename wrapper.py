@@ -27,6 +27,7 @@ import gym
 import json
 import numpy as np
 from PIL import Image
+import datetime
 
 
 class PeriodicDumpWriter(gym.Wrapper):
@@ -516,7 +517,7 @@ class RoleRewardWrapper(gym.RewardWrapper):
         
         return chained(self.PassTrack.count) * discount
     
-    def bisectedPasses(self, *, left, ball, opposition, discount = 0.006):
+    def bisectedPasses(self, *, left, ball, opposition, discount = 0.01):
         
         if not self.PassTrack.received: return 0
         
@@ -534,7 +535,7 @@ class RoleRewardWrapper(gym.RewardWrapper):
             
         return bisection(distances)    
     
-    def forwardPasses(self, *, left, ball, discount = 0.008):
+    def forwardPasses(self, *, left, ball, discount = 0.01):
         
         if not self.PassTrack.received or (self.PassTrack.start is None or self.PassTrack.end is None): return 0
         
@@ -553,7 +554,7 @@ class RoleRewardWrapper(gym.RewardWrapper):
         
         return reward  
         
-    def interceptedPass(self, discount = 0.00000005):
+    def interceptedPass(self, discount = 0.0000005):
         
         if self.PassTrack.intercepted:
             return -1 * discount
@@ -567,7 +568,7 @@ class RoleRewardWrapper(gym.RewardWrapper):
         else:
             return 0
             
-    def shotReward(self, *, left, action, posession, ball, discount = 0.1):
+    def shotReward(self, *, left, action, posession, ball, discount = 0.2):
         
         if action == 12 and posession and ((left and ball.x > 0.4 and ball.x < 0.98) or (not left and ball.x < -0.4 and ball.x > -0.98)) and (abs(ball.y) <= 0.16):
             return max(0.001, 0.25 - abs(0.25 - (self.RightGoal if left else self.LeftGoal).distance(ball.x, ball.y))) * discount
