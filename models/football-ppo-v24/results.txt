@@ -1,0 +1,608 @@
+
+
+   Epoch 1
+   Episode 5 of 5 - [##########]
+
+
+   ------------------------------------
+   | Played                        50 |
+   | Won                            0 |
+   | Lost                          29 |
+   | Drawn                         21 |
+   | Points                        21 |
+   |                                  |
+   | Goals For                      3 |
+   | Goals Against                 50 |
+   | Goal Ratio                   -47 |
+   |                                  |
+   | Time                       08:36 |
+   | Experience              14475:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:1 |
+   | Match 2                      0:1 |
+   | Match 3                      0:0 |
+   | Match 4                      0:0 |
+   | Match 5                      0:1 |
+   | Match 6                      0:2 |
+   | Match 7                      0:2 |
+   | Match 8                      1:2 |
+   | Match 9                      0:0 |
+   | Match 10                     0:1 |
+   ------------------------------------
+
+
+   Epoch 2
+   Episode 5 of 5 - [##########]
+
+
+   ------------------------------------
+   | Played                        50 |
+   | Won                            3 |
+   | Lost                          25 |
+   | Drawn                         22 |
+   | Points                        31 |
+   |                                  |
+   | Goals For                      9 |
+   | Goals Against                 45 |
+   | Goal Ratio                   -36 |
+   |                                  |
+   | Time                       08:21 |
+   | Experience              14550:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:1 |
+   | Match 2                      3:2 |
+   | Match 3                      0:1 |
+   | Match 4                      0:0 |
+   | Match 5                      0:0 |
+   | Match 6                      0:0 |
+   | Match 7                      0:0 |
+   | Match 8                      0:1 |
+   | Match 9                      0:0 |
+   | Match 10                     0:0 |
+   ------------------------------------
+
+
+   Epoch 3
+   Episode 5 of 5 - [##########]
+
+
+   ------------------------------------
+   | Played                        50 |
+   | Won                            0 |
+   | Lost                          37 |
+   | Drawn                         13 |
+   | Points                        13 |
+   |                                  |
+   | Goals For                      2 |
+   | Goals Against                 71 |
+   | Goal Ratio                   -69 |
+   |                                  |
+   | Time                       08:34 |
+   | Experience              14625:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:2 |
+   | Match 3                      0:3 |
+   | Match 4                      0:0 |
+   | Match 5                      0:0 |
+   | Match 6                      0:1 |
+   | Match 7                      0:4 |
+   | Match 8                      0:0 |
+   | Match 9                      0:1 |
+   | Match 10                     0:4 |
+   ------------------------------------
+
+
+   Epoch 4
+   Episode 5 of 5 - [##########]
+
+
+   ------------------------------------
+   | Played                        50 |
+   | Won                            0 |
+   | Lost                          35 |
+   | Drawn                         15 |
+   | Points                        15 |
+   |                                  |
+   | Goals For                      6 |
+   | Goals Against                 66 |
+   | Goal Ratio                   -60 |
+   |                                  |
+   | Time                       08:13 |
+   | Experience              14700:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      1:2 |
+   | Match 2                      1:2 |
+   | Match 3                      0:1 |
+   | Match 4                      0:0 |
+   | Match 5                      0:1 |
+   | Match 6                      0:1 |
+   | Match 7                      0:1 |
+   | Match 8                      0:0 |
+   | Match 9                      0:0 |
+   | Match 10                     0:2 |
+   ------------------------------------
+
+
+   Epoch 5
+   Episode 5 of 5 - [##########]
+
+
+   ------------------------------------
+   | Played                        50 |
+   | Won                            0 |
+   | Lost                          32 |
+   | Drawn                         18 |
+   | Points                        18 |
+   |                                  |
+   | Goals For                      2 |
+   | Goals Against                 47 |
+   | Goal Ratio                   -45 |
+   |                                  |
+   | Time                       08:04 |
+   | Experience              14775:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:1 |
+   | Match 2                      0:1 |
+   | Match 3                      1:2 |
+   | Match 4                      0:0 |
+   | Match 5                      0:2 |
+   | Match 6                      0:0 |
+   | Match 7                      0:2 |
+   | Match 8                      0:1 |
+   | Match 9                      0:1 |
+   | Match 10                     0:0 |
+   ------------------------------------
+
+
+   Epoch 6
+   Episode 5 of 5 - [##########]
+
+
+   ------------------------------------
+   | Played                        50 |
+   | Won                            0 |
+   | Lost                          30 |
+   | Drawn                         20 |
+   | Points                        20 |
+   |                                  |
+   | Goals For                      1 |
+   | Goals Against                 52 |
+   | Goal Ratio                   -51 |
+   |                                  |
+   | Time                       08:23 |
+   | Experience              14850:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:1 |
+   | Match 2                      0:2 |
+   | Match 3                      0:1 |
+   | Match 4                      0:0 |
+   | Match 5                      0:0 |
+   | Match 6                      0:0 |
+   | Match 7                      0:4 |
+   | Match 8                      0:1 |
+   | Match 9                      0:0 |
+   | Match 10                     0:2 |
+   ------------------------------------
+
+
+   Epoch 7
+   Episode 5 of 5 - [##########]
+
+
+   ------------------------------------
+   | Played                        50 |
+   | Won                            0 |
+   | Lost                          34 |
+   | Drawn                         16 |
+   | Points                        16 |
+   |                                  |
+   | Goals For                      1 |
+   | Goals Against                 51 |
+   | Goal Ratio                   -50 |
+   |                                  |
+   | Time                       08:08 |
+   | Experience              14925:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:1 |
+   | Match 2                      0:1 |
+   | Match 3                      0:1 |
+   | Match 4                      0:2 |
+   | Match 5                      0:0 |
+   | Match 6                      0:1 |
+   | Match 7                      0:1 |
+   | Match 8                      0:0 |
+   | Match 9                      0:1 |
+   | Match 10                     0:1 |
+   ------------------------------------
+
+
+   Epoch 8
+   Episode 5 of 5 - [##########]
+
+
+   ------------------------------------
+   | Played                        50 |
+   | Won                            2 |
+   | Lost                          27 |
+   | Drawn                         21 |
+   | Points                        27 |
+   |                                  |
+   | Goals For                      2 |
+   | Goals Against                 44 |
+   | Goal Ratio                   -42 |
+   |                                  |
+   | Time                       08:07 |
+   | Experience              15000:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:1 |
+   | Match 3                      0:1 |
+   | Match 4                      0:2 |
+   | Match 5                      0:0 |
+   | Match 6                      0:2 |
+   | Match 7                      0:1 |
+   | Match 8                      0:0 |
+   | Match 9                      0:0 |
+   | Match 10                     0:0 |
+   ------------------------------------
+
+
+   Epoch 9
+   Episode 5 of 5 - [##########]
+
+
+   ------------------------------------
+   | Played                        50 |
+   | Won                            0 |
+   | Lost                          25 |
+   | Drawn                         25 |
+   | Points                        25 |
+   |                                  |
+   | Goals For                      0 |
+   | Goals Against                 37 |
+   | Goal Ratio                   -37 |
+   |                                  |
+   | Time                       08:04 |
+   | Experience              15075:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:3 |
+   | Match 2                      0:0 |
+   | Match 3                      0:1 |
+   | Match 4                      0:0 |
+   | Match 5                      0:4 |
+   | Match 6                      0:2 |
+   | Match 7                      0:0 |
+   | Match 8                      0:0 |
+   | Match 9                      0:1 |
+   | Match 10                     0:0 |
+   ------------------------------------
+
+
+   Epoch 10
+   Episode 5 of 5 - [##########]
+
+
+   ------------------------------------
+   | Played                        50 |
+   | Won                            1 |
+   | Lost                          25 |
+   | Drawn                         24 |
+   | Points                        27 |
+   |                                  |
+   | Goals For                      3 |
+   | Goals Against                 44 |
+   | Goal Ratio                   -41 |
+   |                                  |
+   | Time                       08:11 |
+   | Experience              15150:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:1 |
+   | Match 3                      0:0 |
+   | Match 4                      0:0 |
+   | Match 5                      0:2 |
+   | Match 6                      0:0 |
+   | Match 7                      0:0 |
+   | Match 8                      0:1 |
+   | Match 9                      0:1 |
+   | Match 10                     0:0 |
+   ------------------------------------
+
+
+   Epoch 11
+   Episode 5 of 5 - [##########]
+
+
+   ------------------------------------
+   | Played                        50 |
+   | Won                            0 |
+   | Lost                          28 |
+   | Drawn                         22 |
+   | Points                        22 |
+   |                                  |
+   | Goals For                      1 |
+   | Goals Against                 41 |
+   | Goal Ratio                   -40 |
+   |                                  |
+   | Time                       08:25 |
+   | Experience              15225:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:1 |
+   | Match 3                      0:0 |
+   | Match 4                      0:0 |
+   | Match 5                      0:0 |
+   | Match 6                      0:1 |
+   | Match 7                      0:1 |
+   | Match 8                      0:2 |
+   | Match 9                      0:2 |
+   | Match 10                     0:0 |
+   ------------------------------------
+
+
+   Epoch 12
+   Episode 5 of 5 - [##########]
+
+
+   ------------------------------------
+   | Played                        50 |
+   | Won                            1 |
+   | Lost                          28 |
+   | Drawn                         21 |
+   | Points                        24 |
+   |                                  |
+   | Goals For                      4 |
+   | Goals Against                 39 |
+   | Goal Ratio                   -35 |
+   |                                  |
+   | Time                       08:23 |
+   | Experience              15300:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:1 |
+   | Match 2                      0:4 |
+   | Match 3                      0:0 |
+   | Match 4                      0:0 |
+   | Match 5                      0:0 |
+   | Match 6                      0:1 |
+   | Match 7                      0:1 |
+   | Match 8                      0:0 |
+   | Match 9                      0:0 |
+   | Match 10                     0:0 |
+   ------------------------------------
+
+
+   Epoch 13
+   Episode 5 of 5 - [##########]
+
+
+   ------------------------------------
+   | Played                        50 |
+   | Won                            2 |
+   | Lost                          27 |
+   | Drawn                         21 |
+   | Points                        27 |
+   |                                  |
+   | Goals For                      4 |
+   | Goals Against                 44 |
+   | Goal Ratio                   -40 |
+   |                                  |
+   | Time                       08:18 |
+   | Experience              15375:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:1 |
+   | Match 2                      1:1 |
+   | Match 3                      0:2 |
+   | Match 4                      0:3 |
+   | Match 5                      0:4 |
+   | Match 6                      0:0 |
+   | Match 7                      0:0 |
+   | Match 8                      0:0 |
+   | Match 9                      0:1 |
+   | Match 10                     0:2 |
+   ------------------------------------
+
+
+   Epoch 14
+   Episode 5 of 5 - [##########]
+
+
+   ------------------------------------
+   | Played                        50 |
+   | Won                            0 |
+   | Lost                          31 |
+   | Drawn                         19 |
+   | Points                        19 |
+   |                                  |
+   | Goals For                      1 |
+   | Goals Against                 43 |
+   | Goal Ratio                   -42 |
+   |                                  |
+   | Time                       08:14 |
+   | Experience              15450:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:1 |
+   | Match 3                      0:1 |
+   | Match 4                      0:0 |
+   | Match 5                      0:2 |
+   | Match 6                      0:1 |
+   | Match 7                      0:1 |
+   | Match 8                      0:0 |
+   | Match 9                      0:2 |
+   | Match 10                     0:0 |
+   ------------------------------------
+
+
+   Epoch 15
+   Episode 5 of 5 - [##########]
+
+
+   ------------------------------------
+   | Played                        50 |
+   | Won                            1 |
+   | Lost                          34 |
+   | Drawn                         15 |
+   | Points                        18 |
+   |                                  |
+   | Goals For                      1 |
+   | Goals Against                 54 |
+   | Goal Ratio                   -53 |
+   |                                  |
+   | Time                       08:07 |
+   | Experience              15525:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:2 |
+   | Match 3                      0:2 |
+   | Match 4                      0:0 |
+   | Match 5                      1:0 |
+   | Match 6                      0:0 |
+   | Match 7                      0:2 |
+   | Match 8                      0:1 |
+   | Match 9                      0:1 |
+   | Match 10                     0:2 |
+   ------------------------------------
+
+
+   Epoch 16
+   Episode 5 of 5 - [##########]
+
+
+   ------------------------------------
+   | Played                        50 |
+   | Won                            0 |
+   | Lost                          24 |
+   | Drawn                         26 |
+   | Points                        26 |
+   |                                  |
+   | Goals For                      0 |
+   | Goals Against                 36 |
+   | Goal Ratio                   -36 |
+   |                                  |
+   | Time                       08:07 |
+   | Experience              15600:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:2 |
+   | Match 2                      0:0 |
+   | Match 3                      0:1 |
+   | Match 4                      0:3 |
+   | Match 5                      0:0 |
+   | Match 6                      0:1 |
+   | Match 7                      0:0 |
+   | Match 8                      0:0 |
+   | Match 9                      0:1 |
+   | Match 10                     0:0 |
+   ------------------------------------
+
+
+   Epoch 17
+   Episode 5 of 5 - [##########]
+
+
+   ------------------------------------
+   | Played                        50 |
+   | Won                            1 |
+   | Lost                          20 |
+   | Drawn                         29 |
+   | Points                        32 |
+   |                                  |
+   | Goals For                      1 |
+   | Goals Against                 31 |
+   | Goal Ratio                   -30 |
+   |                                  |
+   | Time                       07:58 |
+   | Experience              15675:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:1 |
+   | Match 3                      0:0 |
+   | Match 4                      0:0 |
+   | Match 5                      0:0 |
+   | Match 6                      0:2 |
+   | Match 7                      0:0 |
+   | Match 8                      0:2 |
+   | Match 9                      0:2 |
+   | Match 10                     0:0 |
+   ------------------------------------
+
+
+   Epoch 18
+   Episode 5 of 5 - [##########]
+
+
+   ------------------------------------
+   | Played                        50 |
+   | Won                            3 |
+   | Lost                          23 |
+   | Drawn                         24 |
+   | Points                        33 |
+   |                                  |
+   | Goals For                      4 |
+   | Goals Against                 35 |
+   | Goal Ratio                   -31 |
+   |                                  |
+   | Time                       07:53 |
+   | Experience              15750:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:0 |
+   | Match 2                      0:4 |
+   | Match 3                      0:2 |
+   | Match 4                      0:0 |
+   | Match 5                      0:2 |
+   | Match 6                      0:2 |
+   | Match 7                      0:0 |
+   | Match 8                      1:0 |
+   | Match 9                      0:0 |
+   | Match 10                     0:0 |
+   ------------------------------------
+
+
+   Epoch 19
+   Episode 5 of 5 - [##########]
+
+
+   ------------------------------------
+   | Played                        50 |
+   | Won                            1 |
+   | Lost                          27 |
+   | Drawn                         22 |
+   | Points                        25 |
+   |                                  |
+   | Goals For                      2 |
+   | Goals Against                 40 |
+   | Goal Ratio                   -38 |
+   |                                  |
+   | Time                       08:05 |
+   | Experience              x:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:1 |
+   | Match 2                      0:2 |
+   | Match 3                      0:1 |
+   | Match 4                      1:1 |
+   | Match 5                      0:0 |
+   | Match 6                      0:2 |
+   | Match 7                      0:4 |
+   | Match 8                      0:1 |
+   | Match 9                      0:0 |
+   | Match 10                     0:0 |
+   ------------------------------------

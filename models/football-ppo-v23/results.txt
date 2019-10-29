@@ -1,0 +1,64 @@
+
+
+   Epoch 1
+   Episode 5 of 5 - [##########]
+
+
+   ------------------------------------
+   | Played                        50 |
+   | Won                            3 |
+   | Lost                          31 |
+   | Drawn                         16 |
+   | Points                        25 |
+   |                                  |
+   | Goals For                      3 |
+   | Goals Against                 49 |
+   | Goal Ratio                   -46 |
+   |                                  |
+   | Time                       08:12 |
+   | Experience              14475:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:2 |
+   | Match 2                      0:0 |
+   | Match 3                      0:2 |
+   | Match 4                      0:0 |
+   | Match 5                      0:0 |
+   | Match 6                      0:2 |
+   | Match 7                      0:2 |
+   | Match 8                      0:1 |
+   | Match 9                      0:1 |
+   | Match 10                     0:2 |
+   ------------------------------------
+
+
+   Epoch 2
+   Episode 5 of 5 - [##########]
+
+
+   ------------------------------------
+   | Played                        50 |
+   | Won                            0 |
+   | Lost                          29 |
+   | Drawn                         21 |
+   | Points                        21 |
+   |                                  |
+   | Goals For                      0 |
+   | Goals Against                 44 |
+   | Goal Ratio                   -44 |
+   |                                  |
+   | Time                       08:07 |
+   | Experience              14550:00 |
+   | Match Clock                90:00 |
+   ------------------------------------
+   | Match 1                      0:1 |
+   | Match 2                      0:0 |
+   | Match 3                      0:2 |
+   | Match 4                      0:0 |
+   | Match 5                      0:0 |
+   | Match 6                      0:1 |
+   | Match 7                      0:1 |
+   | Match 8                      0:0 |
+   | Match 9                      0:1 |
+   | Match 10                     0:0 |
+   ------------------------------------
